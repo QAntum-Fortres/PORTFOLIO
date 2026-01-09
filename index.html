@@ -1028,9 +1028,379 @@
             <a href="mailto:papica777@gmail.com" class="social-link">📧</a>
             <a href="veritas-dashboard.html" class="social-link">🎯</a>
         </div>
+        <p style="color: #475569; margin-top: 20px; font-size: 0.8rem;">Press <kbd
+                style="background: #1a1a3a; padding: 2px 8px; border-radius: 4px; border: 1px solid var(--primary);">~</kbd>
+            for Terminal Mode</p>
     </footer>
 
+    <!-- HIDDEN TERMINAL OVERLAY -->
+    <div id="terminal-overlay" class="terminal-overlay">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+                <span class="terminal-title">QAntum Terminal v35.0</span>
+                <span class="terminal-close" onclick="toggleTerminal()">×</span>
+            </div>
+            <div class="terminal-body" id="terminal-body">
+                <div class="terminal-welcome">
+                    <pre style="color: var(--primary); font-size: 0.7rem;">
+ ██████╗  █████╗ ███╗   ██╗████████╗██╗   ██╗███╗   ███╗
+██╔═══██╗██╔══██╗████╗  ██║╚══██╔══╝██║   ██║████╗ ████║
+██║   ██║███████║██╔██╗ ██║   ██║   ██║   ██║██╔████╔██║
+██║▄▄ ██║██╔══██║██║╚██╗██║   ██║   ██║   ██║██║╚██╔╝██║
+╚██████╔╝██║  ██║██║ ╚████║   ██║   ╚██████╔╝██║ ╚═╝ ██║
+ ╚══▀▀═╝ ╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝    ╚═════╝ ╚═╝     ╚═╝
+                    </pre>
+                    <p>Welcome to QAntum Terminal. Type <span class="cmd-highlight">help</span> for available commands.
+                    </p>
+                </div>
+            </div>
+            <div class="terminal-input-line">
+                <span class="terminal-prompt">visitor@qantum:~$</span>
+                <input type="text" id="terminal-input" class="terminal-input" autofocus autocomplete="off"
+                    spellcheck="false">
+            </div>
+        </div>
+    </div>
+
+    <!-- ARCHITECTURE SECTION -->
+    <section id="architecture" class="architecture">
+        <div class="container">
+            <h2 class="section-title">🏛️ System Architecture</h2>
+            <p class="section-subtitle">How QAntum Prime processes 14.7M+ lines of intelligence</p>
+            <div class="mermaid-container">
+                <div class="mermaid">
+                    graph LR
+                    A[📊 Market Data] --> B[⚡ Rust Core]
+                    B --> C[🧠 Vertex AI Brain]
+                    C --> D[🎯 Execution Engine]
+                    D --> E[💰 Revenue Stream]
+
+                    B --> F[🛡️ GhostShield]
+                    F --> G[🔒 Bot Bypass]
+
+                    C --> H[📈 VectorMemory]
+                    H --> I[52K Vectors]
+
+                    style A fill:#1a1a3a,stroke:#00f5ff,color:#fff
+                    style B fill:#1a1a3a,stroke:#ff00ff,color:#fff
+                    style C fill:#1a1a3a,stroke:#00ff9d,color:#fff
+                    style D fill:#1a1a3a,stroke:#ffd700,color:#fff
+                    style E fill:#1a1a3a,stroke:#00f5ff,color:#fff
+                    style F fill:#1a1a3a,stroke:#9d50bb,color:#fff
+                    style G fill:#1a1a3a,stroke:#9d50bb,color:#fff
+                    style H fill:#1a1a3a,stroke:#00f5ff,color:#fff
+                    style I fill:#1a1a3a,stroke:#00f5ff,color:#fff
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mermaid.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+
+    <style>
+        /* ============================================
+           GLITCH EFFECTS FOR PROJECT CARDS
+           ============================================ */
+        .project-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 245, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .project-card:hover::before {
+            left: 100%;
+        }
+
+        .project-card:hover {
+            border-color: var(--primary) !important;
+            box-shadow: 0 0 30px rgba(0, 245, 255, 0.3),
+                inset 0 0 20px rgba(0, 245, 255, 0.05);
+            animation: glitch-border 0.3s ease-in-out;
+        }
+
+        @keyframes glitch-border {
+
+            0%,
+            100% {
+                transform: translate(0);
+            }
+
+            20% {
+                transform: translate(-2px, 2px);
+            }
+
+            40% {
+                transform: translate(2px, -2px);
+            }
+
+            60% {
+                transform: translate(-1px, -1px);
+            }
+
+            80% {
+                transform: translate(1px, 1px);
+            }
+        }
+
+        .project-card:hover .project-title {
+            animation: glitch-text 0.5s ease-in-out;
+        }
+
+        @keyframes glitch-text {
+
+            0%,
+            100% {
+                text-shadow: none;
+            }
+
+            25% {
+                text-shadow: -2px 0 var(--accent), 2px 0 var(--primary);
+            }
+
+            50% {
+                text-shadow: 2px 0 var(--accent), -2px 0 var(--primary);
+            }
+
+            75% {
+                text-shadow: -1px 0 var(--success), 1px 0 var(--warning);
+            }
+        }
+
+        /* ============================================
+           TERMINAL STYLES
+           ============================================ */
+        .terminal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .terminal-overlay.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .terminal-window {
+            width: 90%;
+            max-width: 800px;
+            height: 500px;
+            background: #0d0d0d;
+            border-radius: 10px;
+            border: 1px solid var(--primary);
+            box-shadow: 0 0 50px rgba(0, 245, 255, 0.3);
+            display: flex;
+            flex-direction: column;
+            font-family: 'Fira Code', 'Courier New', monospace;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .terminal-header {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            background: #1a1a1a;
+            border-bottom: 1px solid #333;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .terminal-dot.red {
+            background: #ff5f56;
+        }
+
+        .terminal-dot.yellow {
+            background: #ffbd2e;
+        }
+
+        .terminal-dot.green {
+            background: #27ca40;
+        }
+
+        .terminal-title {
+            flex: 1;
+            text-align: center;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .terminal-close {
+            color: #888;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .terminal-close:hover {
+            color: #ff5f56;
+        }
+
+        .terminal-body {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            color: #00ff00;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .terminal-body::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .terminal-body::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+
+        .terminal-body::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+
+        .terminal-welcome pre {
+            margin-bottom: 10px;
+        }
+
+        .cmd-highlight {
+            color: var(--primary);
+            background: rgba(0, 245, 255, 0.1);
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        .terminal-input-line {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            background: #1a1a1a;
+            border-top: 1px solid #333;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .terminal-prompt {
+            color: var(--success);
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
+        .terminal-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-family: inherit;
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        .output-line {
+            margin: 5px 0;
+        }
+
+        .output-cmd {
+            color: #888;
+        }
+
+        .output-result {
+            color: #fff;
+            padding-left: 10px;
+        }
+
+        .output-error {
+            color: #ff5f56;
+        }
+
+        .output-success {
+            color: var(--success);
+        }
+
+        /* ============================================
+           ARCHITECTURE SECTION
+           ============================================ */
+        .architecture {
+            padding: 100px 20px;
+            background: var(--medium);
+        }
+
+        .mermaid-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background: var(--dark);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 245, 255, 0.2);
+        }
+
+        .mermaid {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+
     <script>
+        // Initialize Mermaid
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'dark',
+            themeVariables: {
+                primaryColor: '#1a1a3a',
+                primaryTextColor: '#fff',
+                primaryBorderColor: '#00f5ff',
+                lineColor: '#00f5ff',
+                secondaryColor: '#9d50bb',
+                tertiaryColor: '#1a1a3a'
+            }
+        });
+
         // Generate floating particles
         const particlesContainer = document.getElementById('particles');
         for (let i = 0; i < 30; i++) {
@@ -1057,6 +1427,128 @@
                     });
                 }
             });
+        });
+
+        // ============================================
+        // TERMINAL SYSTEM
+        // ============================================
+        const terminalOverlay = document.getElementById('terminal-overlay');
+        const terminalInput = document.getElementById('terminal-input');
+        const terminalBody = document.getElementById('terminal-body');
+
+        function toggleTerminal() {
+            terminalOverlay.classList.toggle('active');
+            if (terminalOverlay.classList.contains('active')) {
+                terminalInput.focus();
+            }
+        }
+
+        // Listen for ~ key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === '`' || e.key === '~') {
+                e.preventDefault();
+                toggleTerminal();
+            }
+            if (e.key === 'Escape' && terminalOverlay.classList.contains('active')) {
+                toggleTerminal();
+            }
+        });
+
+        // Terminal commands
+        const commands = {
+            help: () => `
+<span class="output-success">Available Commands:</span>
+  <span class="cmd-highlight">help</span>      - Show this help message
+  <span class="cmd-highlight">skills</span>    - List technical skills
+  <span class="cmd-highlight">projects</span>  - Show flagship projects
+  <span class="cmd-highlight">contact</span>   - Display contact information
+  <span class="cmd-highlight">stats</span>     - Show project statistics
+  <span class="cmd-highlight">whoami</span>    - About the developer
+  <span class="cmd-highlight">clear</span>     - Clear terminal
+  <span class="cmd-highlight">exit</span>      - Close terminal`,
+
+            skills: () => `
+<span class="output-success">🛠️ Technical Skills:</span>
+  <span style="color: #00f5ff;">Languages:</span>   TypeScript, Rust, Python, C#, SQL
+  <span style="color: #ff00ff;">Frameworks:</span>  Playwright, Selenium, Cypress, Robot
+  <span style="color: #00ff9d;">AI/ML:</span>       Vertex AI, DeepSeek, OpenAI, Pinecone
+  <span style="color: #ffd700;">DevOps:</span>      Docker, K8s, GCP, AWS, GitHub Actions
+  <span style="color: #9d50bb;">Special:</span>     Bot Detection Bypass, Zero-Copy Networking`,
+
+            projects: () => `
+<span class="output-success">🚀 Flagship Projects:</span>
+  [1] <span style="color: #00f5ff;">QAntum Prime</span>     - 14.7M LOC Test Automation Framework
+  [2] <span style="color: #ff00ff;">GhostShield SDK</span>  - Bot Detection Bypass (100% Success)
+  [3] <span style="color: #00ff9d;">VectorMemory</span>     - 52K Semantic Vectors in Pinecone
+  [4] <span style="color: #ffd700;">Chronos-Bolt</span>     - Time-Series Transformer for Testing
+  [5] <span style="color: #9d50bb;">Holodeck</span>         - 3D D3.js Visualization Engine`,
+
+            contact: () => `
+<span class="output-success">📧 Contact Information:</span>
+  Email:    <span style="color: #00f5ff;">papica777@gmail.com</span>
+  GitHub:   <span style="color: #00f5ff;">github.com/QAntum-Fortres</span>
+  Location: <span style="color: #888;">Bulgaria (Remote Available)</span>`,
+
+            stats: () => `
+<span class="output-success">📊 Project Statistics:</span>
+  Lines of Code:    <span style="color: #00f5ff;">14,755,102</span>
+  Pinecone Vectors: <span style="color: #ff00ff;">52,573</span>
+  Active Modules:   <span style="color: #00ff9d;">173</span>
+  Departments:      <span style="color: #ffd700;">8</span>
+  Test Coverage:    <span style="color: #9d50bb;">100%</span>`,
+
+            whoami: () => `
+<span class="output-success">👤 Dimitar Prodromov</span>
+  Role:       Senior QA Engineer & Automation Architect
+  Experience: 7+ Years in Test Automation
+  Specialty:  AI-Driven Testing, Bot Detection Bypass
+  Philosophy: "Quality is not an act, it's a habit."`,
+
+            clear: () => {
+                terminalBody.innerHTML = '';
+                return null;
+            },
+
+            exit: () => {
+                toggleTerminal();
+                return null;
+            }
+        };
+
+        // Handle terminal input
+        terminalInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                const cmd = terminalInput.value.trim().toLowerCase();
+                terminalInput.value = '';
+
+                // Add command to output
+                const cmdLine = document.createElement('div');
+                cmdLine.className = 'output-line';
+                cmdLine.innerHTML = `<span class="output-cmd">visitor@qantum:~$ ${cmd}</span>`;
+                terminalBody.appendChild(cmdLine);
+
+                // Execute command
+                if (cmd === '') return;
+
+                const result = commands[cmd];
+                if (result) {
+                    const output = result();
+                    if (output) {
+                        const resultLine = document.createElement('div');
+                        resultLine.className = 'output-line output-result';
+                        resultLine.innerHTML = output;
+                        terminalBody.appendChild(resultLine);
+                    }
+                } else {
+                    const errorLine = document.createElement('div');
+                    errorLine.className = 'output-line output-error';
+                    errorLine.textContent = `Command not found: ${cmd}. Type 'help' for available commands.`;
+                    terminalBody.appendChild(errorLine);
+                }
+
+                // Scroll to bottom
+                terminalBody.scrollTop = terminalBody.scrollHeight;
+            }
         });
     </script>
 </body>
