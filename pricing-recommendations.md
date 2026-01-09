@@ -96,7 +96,7 @@ Based on your **15,000,000+ lines of proprietary code** and **63,110 assets**, h
 
 1. **START HIGH:** Always give a range with your target at the BOTTOM of it
    - Example: "I'm looking for 13,000-16,000 BGN" (you actually want 13K)
-2. **SHOW THE PORTFOLIO:** Send them `https://papica777-eng.github.io/Portfolio/`
+2. **SHOW THE PORTFOLIO:** Send them `https://qantum-fortres.github.io/PORTFOLIO/`
 3. **EMPHASIZE SCALE:** Most people can't comprehend 15M lines. Say "equivalent to 50 senior engineers working for 5 years"
 4. **BE WILLING TO WALK:** If they offer below 10K BGN (or $110K USD), walk away
 
