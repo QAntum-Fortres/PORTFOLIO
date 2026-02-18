@@ -1,6 +1,6 @@
 # ⚛️ Dimitar Prodromov | QA Automation Architect
 
-> **14.7M+ Lines of Code** | **52,573 Vectors** | **173 Modules** | **8 Departments**
+> **15M+ Lines of Code** | **52,573 Vectors** | **173 Modules** | **8 Departments**
 
 ```
 ╔══════════════════════════════════════════════════════════════════════════╗
@@ -31,7 +31,7 @@
 | Project | Description | Tech |
 |---------|-------------|------|
 | 🛡️ **GhostShield SDK** | Bot detection bypass with 100% success rate vs Cloudflare, Akamai, PerimeterX | TypeScript, Stealth |
-| ⚡ **QAntum Framework** | 14.7M+ lines of proprietary test automation with AI self-healing | TypeScript, Selenium |
+| ⚡ **QAntum Framework** | 15M+ lines of proprietary test automation with AI self-healing | TypeScript, Selenium |
 | 🔮 **Chronos-Bolt** | Time-series transformer for 7-day predictive testing | Python, ML |
 | 🧠 **DeepSeek R1 Swarm** | AI agent swarm for autonomous test generation | AI Agents |
 | 📊 **VectorMemory** | TF-IDF semantic search with 52,573 vectors indexed | Pinecone, Embeddings |
@@ -56,7 +56,7 @@
 
 | Metric | Value |
 |--------|-------|
-| **Total Lines of Code** | 14,755,102 |
+| **Total Lines of Code** | 15,000,000+ |
 | **Pinecone Vectors** | 52,573 |
 | **Modules** | 173 |
 | **Departments** | 8 |
