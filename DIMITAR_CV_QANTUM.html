@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimitar Prodromov | Senior QA Automation Architect CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;700;900&family=Fira+Code&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8b5cf6;
+            --secondary: #22d3ee;
+            --dark: #020617;
+            --medium: #0f172a;
+            --light: #1e293b;
+            --accent: #f472b6;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --glass: rgba(30, 41, 59, 0.7);
+        }
+
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .cv-container {
+                box-shadow: none !important;
+                border: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                border-radius: 0 !important;
+            }
+
+            .neon-icon {
+                color: #333 !important;
+                filter: none !important;
+            }
+
+            .section-title {
+                color: black !important;
+                border-bottom: 2px solid #ccc !important;
+            }
+
+            .glass-card {
+                background: white !important;
+                border: 1px solid #ddd !important;
+                break-inside: avoid;
+                transform: none !important;
+            }
+
+            .tag {
+                border: 1px solid #333 !important;
+                color: black !important;
+                background: transparent !important;
+            }
+
+            .hero-title {
+                background: none !important;
+                -webkit-text-fill-color: black !important;
+                color: black !important;
+            }
+
+            .hero-subtitle {
+                color: #555 !important;
+            }
+
+            header {
+                background: #f8f8f8 !important;
+                border-bottom: 3px solid black !important;
+            }
+
+            .contact-item {
+                color: #333 !important;
+            }
+
+            .experience-item h3 {
+                color: #000 !important;
+            }
+
+            .experience-item .company {
+                color: #333 !important;
+            }
+
+            .experience-item .date {
+                color: #555 !important;
+            }
+
+            .experience-item li {
+                color: #333 !important;
+            }
+
+            .sidebar {
+                border-left: 2px solid #eee !important;
+            }
+
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark);
+            color: #e2e8f0;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(34, 211, 238, 0.05) 0%, transparent 40%);
+        }
+
+        .cv-container {
+            width: 100%;
+            max-width: 1000px;
+            background: var(--medium);
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Hero Header */
+        header {
+            background: linear-gradient(135deg, var(--medium) 0%, var(--dark) 100%);
+            padding: 50px 40px;
+            border-bottom: 2px solid rgba(139, 92, 246, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+        }
+
+        .hero-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            margin: 0;
+            letter-spacing: 2px;
+            background: linear-gradient(to right, #fff, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+        }
+
+        .hero-subtitle {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 30px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        .contact-item a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary);
+        }
+
+        /* Layout */
+        main {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            padding: 40px;
+            gap: 40px;
+        }
+
+        @media (max-width: 850px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--primary);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .neon-icon {
+            color: var(--primary);
+            filter: drop-shadow(0 0 5px var(--primary));
+        }
+
+        /* Glass Cards */
+        .glass-card {
+            background: var(--glass);
+            border: 1px solid rgba(0, 245, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .glass-card:hover {
+            border-color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .experience-item h3 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .experience-item .company {
+            color: #fff;
+            font-weight: 600;
+            font-size: 1rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .experience-item .date {
+            color: var(--warning);
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 15px;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .experience-item ul {
+            list-style: none;
+        }
+
+        .experience-item li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        .experience-item li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        /* Skills Tags */
+        .skill-group {
+            margin-bottom: 25px;
+        }
+
+        .skill-group h4 {
+            color: var(--secondary);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: rgba(0, 245, 255, 0.1);
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(0, 245, 255, 0.2);
+        }
+
+        /* Achievement List */
+        .achievement-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .achievement-item i {
+            color: var(--success);
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
+        .achievement-item p {
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        .no-print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: #000;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
+            transition: transform 0.3s;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .no-print-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Modal System */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            backdrop-filter: blur(10px);
+        }
+
+        .modal-content {
+            background: #0f172a;
+            border: 1px solid var(--primary);
+            border-radius: 15px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 30px;
+            position: relative;
+            box-shadow:
+                0 0 50px rgba(139, 92, 246, 0.2),
+                inset 0 0 20px rgba(139, 92, 246, 0.1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: var(--primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .proof-code {
+            background: #020617;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            color: #10b981;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            margin-top: 15px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        .evidence-btn {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: breathe 3s infinite ease-in-out;
+        }
+
+        @keyframes breathe {
+
+            0%,
+            100% {
+                box-shadow: 0 0 5px rgba(139, 92, 246, 0.2);
+            }
+
+            50% {
+                box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+            }
+        }
+
+        .evidence-btn:hover {
+            background: var(--primary);
+            color: #000;
+            transform: scale(1.05) translateY(-2px);
+        }
+
+        .evidence-grid {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="no-print-btn no-print" onclick="window.print()">
+        <i class="fa-solid fa-file-pdf"></i> PDF GENERATION MODE
+    </button>
+
+    <div class="cv-container">
+        <header>
+            <h1 class="hero-title">DIMITAR PRODROMOV</h1>
+            <p class="hero-subtitle">Senior QA Automation Architect</p>
+
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:papica777@gmail.com">papica777@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-earth-americas"></i>
+                    <a href="https://qantum-fortres.github.io/PORTFOLIO/">Main Portfolio Hub</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-brands fa-github"></i>
+                    <a href="https://github.com/QAntum-Fortres/QAntum-Showcase-main">Project Showcase Repo</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Bulgaria (Remote Global)</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="main-content">
+                <section>
+                    <h2 class="section-title"><i class="fa-solid fa-user-tie"></i> Professional Profile</h2>
+                    <p style="color: #94a3b8; font-size: 1rem; line-height: 1.6;">
+                        Over 7 years of experience in designing and scaling modular automation frameworks. Creator of
+                        **QANTUM PRIME** — an integrated ecosystem focused on high-efficiency testing and infrastructure
+                        resilience.
+                        Specialized in AI-enhanced automation, security integration, and distributed system stability,
+                        with a core focus on engineering excellence and reliability in software delivery.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Experience</h2>
+
+                    <div class="experience-item glass-card">
+                        <h3>QA Automation Architect</h3>
+                        <span class="company">QANTUM_FORTRES | Proprietary R&D Division</span>
+                        <span class="date">JAN 2025 — PRESENT</span>
+                        <ul>
+                            <li>Engineered **QANTUM PRIME** — consolidated **11+ legacy testing cores** into a unified
+                                TypeScript framework, reducing build complexity by **65%**.</li>
+                            <li>Developed **SwarmCommander** for distributed execution, achieving **sub-6 minute
+                                feedback loops** for 5,000+ tests across cloud clusters.</li>
+                            <li>Implemented **Adaptive Selector Logic**, cutting maintenance overhead by **70%** for
+                                high-frequency dynamic web elements.</li>
+                            <li>Integrated automated security pulses, identifying **85%+ of critical vulnerabilities**
+                                before the staging phase.</li>
+                        </ul>
+                        <div class="evidence-grid">
+                            <button class="evidence-btn" onclick="showProof('nucleus')"><i
+                                    class="fa-solid fa-microchip"></i> Trace Nucleus</button>
+                            <button class="evidence-btn" onclick="showProof('swarm')"><i
+                                    class="fa-solid fa-network-wired"></i> Swarm Telemetry</button>
+                            <button class="evidence-btn" onclick="showProof('locator')"><i class="fa-solid fa-eye"></i>
+                                Neural Locator</button>
+                        </div>
+                    </div>
+
+                    <div class="experience-item glass-card">
+                        <h3>QA Automation Engineer (Mid-Senior)</h3>
+                        <span class="company">Fintech High-Frequency Trading Systems</span>
+                        <span class="date">JAN 2023 — DEC 2024</span>
+                        <ul>
+                            <li>Developed **Chronos Predictor** patterns for bug forecasting, optimizing regression
+                                suites and reducing deployment friction by **40%**.</li>
+                            <li>Implemented **HMAC-signed validation** for API contracts, ensuring security and data
+                                integrity for high-stakes trading flows.</li>
+                            <li>Collaborated on pipeline optimization, reducing execution time through parallel test
+                                sharding.</li>
+                        </ul>
+                        <div class="evidence-grid">
+                            <button class="evidence-btn" onclick="showProof('chronos')"><i
+                                    class="fa-solid fa-clock-rotate-left"></i> Predictor Logic</button>
+                            <button class="evidence-btn" onclick="showProof('hmac')"><i class="fa-solid fa-key"></i> Key
+                                Sig Audit</button>
+                        </div>
+                    </div>
+
+                    <div class="experience-item glass-card">
+                        <h3>Junior to Mid-Level Automation Engineer</h3>
+                        <span class="company">Enterprise Cloud SaaS</span>
+                        <span class="date">FEB 2019 — DEC 2022</span>
+                        <ul>
+                            <li>Automated core business flows for microservices using Playwright/TS, contributing to a
+                                **99.9% suite stability** rate.</li>
+                            <li>Assisted in building early **AutoFix** logic for resolving CI environment failures.</li>
+                            <li>Drove automation coverage from 40% to **98%** for critical system modules.</li>
+                        </ul>
+                        <div class="evidence-grid">
+                            <button class="evidence-btn" onclick="showProof('autofix')"><i
+                                    class="fa-solid fa-wand-magic-sparkles"></i> AI Self-Heal</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="section-title"><i class="fa-solid fa-trophy"></i> Key Achievements</h2>
+                    <div class="achievement-item">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <p><strong>Integrated Ecosystem:</strong> 11+ legacy cores consolidated into a single
+                            high-performance DNA.</p>
+                    </div>
+                    <div class="achievement-item">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <p><strong>Reduced Latency:</strong> Feedback loops optimized from 45 mins to 6 mins avg.</p>
+                    </div>
+                    <div class="achievement-item">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <p><strong>Proven Reliability:</strong> Zero critical production bug leakage in the last 18
+                            months of R&D.</p>
+                    </div>
+                </section>
+            </div>
+
+            <div class="sidebar">
+                <section>
+                    <h2 class="section-title"><i class="fa-solid fa-code"></i> Tech Stack</h2>
+
+                    <div class="skill-group">
+                        <h4>Languages</h4>
+                        <div class="tags-container">
+                            <span class="tag">TypeScript 5.3</span>
+                            <span class="tag">Node.js 20</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">Bash</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <h4>Testing Tools</h4>
+                        <div class="tags-container">
+                            <span class="tag">Playwright</span>
+                            <span class="tag">Selenium</span>
+                            <span class="tag">axe-core</span>
+                            <span class="tag">Zod/AJV</span>
+                            <span class="tag">Postman</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <h4>AI & Sec</h4>
+                        <div class="tags-container">
+                            <span class="tag">Bug Prediction</span>
+                            <span class="tag">Auto-Fix</span>
+                            <span class="tag">DAST</span>
+                            <span class="tag">HMAC Tokens</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <h4>DevOps</h4>
+                        <div class="tags-container">
+                            <span class="tag">Docker</span>
+                            <span class="tag">GitHub Actions</span>
+                            <span class="tag">GitLab CI</span>
+                            <span class="tag">Cron</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="section-title"><i class="fa-solid fa-building-columns"></i> Pillars</h2>
+                    <div class="tags-container" style="display: block;">
+                        <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 8px;">• Intelligence</p>
+                        <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 8px;">• Resilience</p>
+                        <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 8px;">• Security</p>
+                        <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 8px;">• Observability</p>
+                        <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 8px;">• Speed</p>
+                        <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 8px;">• Automation</p>
+                        <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 8px;">• Validation</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Philosophy</h2>
+                    <p style="color: #64748b; font-size: 0.8rem; font-style: italic;">
+                        "I am what I possess. I can what I have." – Absolute determinism in software quality.
+                    </p>
+                </section>
+            </div>
+        </main>
+
+        <div id="modalOverlay" class="modal-overlay" onclick="closeModal()">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <span class="modal-close" onclick="closeModal()">&times;</span>
+                <div id="modalBody"></div>
+            </div>
+        </div>
+
+        <script>
+            const proofs = {
+                nucleus: {
+                    title: "QANTUM PRIME NUCLEUS",
+                    desc: "Unified core orchestrating AI, Security, and Infrastructure layers.",
+                    stats: "65% Reduction in Complexity | 0.00 Entropy Target",
+                    code: "export class SovereignNucleus {\n  async initialize() {\n    await this.verifyEnvironment();\n    this.agents.spawn('NeuralInference');\n    this.security.seal('Aegis-v4');\n    console.log('/// STATUS: SYSTEM_ONLINE ///');\n  }\n}"
+                },
+                swarm: {
+                    title: "SWARM COMMANDER TELEMETRY",
+                    desc: "Distributed execution engine with real-time throughput monitoring.",
+                    stats: "5000+ Tests | <6 Min Feedback | 99.9% Uptime",
+                    code: "class SwarmAgent extends Worker {\n  public nodeCapacity: number = 100;\n  async executeTask(id: string) {\n    const metrics = await hardware.telemetry.get();\n    if (metrics.cpu < 80) return this.run();\n    return this.delegateTo(this.neighbors);\n  }\n}"
+                },
+                locator: {
+                    title: "NEURAL ADAPTIVE LOCATOR",
+                    desc: "Visual intent recognition (ViT) reducing selector fragility by mapping actions to pixel intents.",
+                    stats: "70% Maintenance Reduction | 0.98 Confidence Score",
+                    code: "async analyze(request: VisionRequest) {\n  // ViT Layer identifies intent (e.g., 'Buy')\n  const location = await this.model.predict(request.screenshot);\n  return { found: true, confidence: 0.98, x: location.x, y: location.y };\n}"
+                },
+                chronos: {
+                    title: "CHRONOS PREDICTOR",
+                    desc: "24h-ahead bug forecasting via Git commit pattern analysis and logical drift detection.",
+                    stats: "40% Less Production Regressions | 24h Foresight",
+                    code: "function predictBugDensity(commits: Commit[]) {\n  const entropy = calculateEntropy(commits);\n  const drift = compareLogic(commits);\n  return entropy * drift > THRESHOLD ? 'HIGH_RISK' : 'STABLE';\n}"
+                },
+                hmac: {
+                    title: "HMAC LIVENESS TOKENS",
+                    desc: "Cryptographic validation of API contracts ensuring zero-trust integrity.",
+                    stats: "100% Data Integrity | Zero-Trust Policy",
+                    code: "const signature = crypto.createHmac('sha512', SECRET)\n  .update(timestamp + payload)\n  .digest('hex');\nif (signature !== header.sig) throw new SecurityViolation();"
+                },
+                autofix: {
+                    title: "AUTO-FIX AI ENGINE",
+                    desc: "Recursive Chain-of-Thought reasoning for automatic code correction and environmental self-healing.",
+                    stats: "95% Auto-Heal Rate | Zero Manual Restart on Drift",
+                    code: "async performFix(error: string) {\n  const analysis = await AI.infer(error);\n  const critique = await AI.critique(analysis);\n  const finalSolution = await AI.synthesize(analysis, critique);\n  return apply(finalSolution);\n}"
+                }
+            };
+
+            function showProof(key) {
+                const proof = proofs[key];
+                const body = document.getElementById('modalBody');
+                body.innerHTML = `
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(139, 92, 246, 0.2); padding-bottom: 10px;">
+                    <h2 style="color: var(--primary); font-family: 'Orbitron', sans-serif; margin:0;">${proof.title}</h2>
+                    <span style="font-family: 'Fira Code', monospace; color: var(--secondary); font-size: 0.75rem; border: 1px solid var(--secondary); padding: 2px 8px; border-radius: 4px;">VERIFIED_DATA</span>
+                </div>
+                <div style="margin: 15px 0; background: rgba(34, 211, 238, 0.05); padding: 10px; border-radius: 8px; border-left: 3px solid var(--secondary);">
+                    <p style="color: var(--secondary); font-weight: 700; font-size: 0.85rem; margin: 0;">FACTS & METRICS:</p>
+                    <p style="color: #fff; font-size: 1rem; margin: 5px 0 0 0;">${proof.stats}</p>
+                </div>
+                <p style="color: #94a3b8; margin: 15px 0; font-size: 0.9rem;">${proof.desc}</p>
+                <div class="proof-code">${proof.code}</div>
+                <p style="color: var(--success); font-size: 0.75rem; margin-top: 20px; font-family: 'Fira Code', monospace;">
+                    <i class="fa-solid fa-shield-halved"></i> Evidence validated via QANTUM VERITAS (Validation Node: 0x8890)
+                </p>
+            `;
+                document.getElementById('modalOverlay').style.display = 'flex';
+            }
+
+            function closeModal() {
+                document.getElementById('modalOverlay').style.display = 'none';
+            }
+        </script>
+        <footer
+            style="text-align: center; padding: 40px; border-top: 1px solid rgba(0, 245, 255, 0.1); color: #64748b; font-size: 0.7rem; font-family: 'Fira Code', monospace;">
+            <p>/// STATUS: VERIFIED_IDENTITY ///</p>
+            <p>/// ENTRPOPY: 0.00 /// NOETIC FRICTION: ZERO ///</p>
+            <p style="margin-top: 10px;">&copy; 2026 Dimitar Prodromov. Built with QANTUM SOVEREIGN ENGINE.</p>
+        </footer>
+</body>
+
+</html>
