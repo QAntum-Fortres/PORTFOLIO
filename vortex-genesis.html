@@ -821,7 +821,7 @@ O(1) достъп до всеки healing path.
 
 <span class="hashtags">#QAAutomation #FormalVerification #ChaosEngineering #SystemResilience #Z3Solver #SelfHealing #QAArchitect #VortexGenesis #BeyondTesting #DeterministicResilience</span></div>
                 <button class="copy-btn" id="copy-btn" type="button">
-                    <i class="fa-solid fa-copy"></i> Copy to Clipboard
+                    <i class="fa-solid fa-copy"></i> <span id="copy-btn-text">Copy to Clipboard</span>
                 </button>
             </div>
         </div>
@@ -894,22 +894,25 @@ O(1) достъп до всеки healing path.
         (function initCopy() {
             var btn = document.getElementById('copy-btn');
             var textEl = document.getElementById('linkedin-text');
-            if (!btn || !textEl) return;
+            var btnText = document.getElementById('copy-btn-text');
+            if (!btn || !textEl || !btnText) return;
+
+            function showCopied() {
+                btn.classList.add('copied');
+                btn.querySelector('i').className = 'fa-solid fa-check';
+                btnText.textContent = 'Copied!';
+                setTimeout(function() {
+                    btn.classList.remove('copied');
+                    btn.querySelector('i').className = 'fa-solid fa-copy';
+                    btnText.textContent = 'Copy to Clipboard';
+                }, 2000);
+            }
+
             btn.addEventListener('click', function() {
                 var text = textEl.textContent || textEl.innerText;
                 if (navigator.clipboard && navigator.clipboard.writeText) {
-                    navigator.clipboard.writeText(text).then(function() {
-                        btn.classList.add('copied');
-                        btn.querySelector('i').className = 'fa-solid fa-check';
-                        btn.lastChild.textContent = ' Copied!';
-                        setTimeout(function() {
-                            btn.classList.remove('copied');
-                            btn.querySelector('i').className = 'fa-solid fa-copy';
-                            btn.lastChild.textContent = ' Copy to Clipboard';
-                        }, 2000);
-                    });
+                    navigator.clipboard.writeText(text).then(showCopied);
                 } else {
-                    // Fallback for older browsers
                     var range = document.createRange();
                     range.selectNodeContents(textEl);
                     var sel = window.getSelection();
@@ -917,14 +920,7 @@ O(1) достъп до всеки healing path.
                     sel.addRange(range);
                     try {
                         document.execCommand('copy');
-                        btn.classList.add('copied');
-                        btn.querySelector('i').className = 'fa-solid fa-check';
-                        btn.lastChild.textContent = ' Copied!';
-                        setTimeout(function() {
-                            btn.classList.remove('copied');
-                            btn.querySelector('i').className = 'fa-solid fa-copy';
-                            btn.lastChild.textContent = ' Copy to Clipboard';
-                        }, 2000);
+                        showCopied();
                     } finally {
                         sel.removeAllRanges();
                     }
