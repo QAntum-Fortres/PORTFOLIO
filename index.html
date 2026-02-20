@@ -825,6 +825,73 @@
             font-size: 1.4rem;
         }
         /* ── End Neon Icon Styles ────────────────────────────────────── */
+
+        /* ── View Demo / Matrix Showcase Styles ──────────────────────── */
+        .demo-showcase {
+            padding: 100px 20px;
+            background: var(--dark);
+        }
+        .demo-card {
+            background: var(--light);
+            border: 1px solid rgba(0, 245, 255, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .demo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 245, 255, 0.15);
+            border-color: var(--primary);
+        }
+        .metric-badge {
+            background: rgba(0, 245, 255, 0.1);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+        }
+        .demo-card .role-title {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            font-family: 'Orbitron', sans-serif;
+        }
+        .demo-card .description {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .demo-card .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .demo-card .skill-tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e2e8f0;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-family: 'Fira Code', 'Courier New', monospace;
+        }
+        .demo-card .leverage-box {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px dashed rgba(0, 245, 255, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #cbd5e1;
+        }
     </style>
 </head>
 
@@ -838,6 +905,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#demos">Demos</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -877,6 +945,7 @@
 
             <div class="cta-buttons">
                 <a href="https://github.com/QAntum-Fortres/QA-TOOLS" class="btn btn-primary" target="_blank"><i class="fa-solid fa-bolt neon-icon"></i> View Arsenal</a>
+                <a href="#demos" class="btn btn-secondary"><i class="fa-solid fa-play neon-icon"></i> View Demos</a>
                 <a href="#contact" class="btn btn-secondary"><i class="fa-solid fa-envelope neon-icon"></i> Contact Me</a>
             </div>
         </div>
@@ -1237,6 +1306,68 @@
         </div>
     </section>
 
+    <!-- Live Demonstrations Section -->
+    <section class="demo-showcase" id="demos">
+        <div class="container">
+            <h2 class="section-title">LIVE DEMONSTRATIONS</h2>
+            <div class="project-grid">
+
+                <div class="demo-card">
+                    <span class="metric-badge">0% FLAKINESS</span>
+                    <div class="role-title">Self-Healing SEGC</div>
+                    <div class="description">Selector Evolution via Genetic Algorithms — automatically evolves CSS selectors to eliminate test flakiness, achieving 0% flakiness rate across 1,000+ test runs.</div>
+                    <div class="skills-list">
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">Genetic Algorithms</span>
+                        <span class="skill-tag">Playwright</span>
+                        <span class="skill-tag">Self-Healing</span>
+                    </div>
+                    <div class="leverage-box">Eliminates brittle selectors using evolutionary mutation strategies — 100% selector survival rate.</div>
+                </div>
+
+                <div class="demo-card">
+                    <span class="metric-badge">24H FORECAST</span>
+                    <div class="role-title">Chronos Predictor</div>
+                    <div class="description">AI-powered bug forecasting engine that predicts failures 24 hours in advance using time-series analysis and ML models trained on historical test data.</div>
+                    <div class="skills-list">
+                        <span class="skill-tag">AI/ML</span>
+                        <span class="skill-tag">Time Series</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Predictive Analytics</span>
+                    </div>
+                    <div class="leverage-box">Reduces production incidents by predicting and flagging high-risk areas before deployment.</div>
+                </div>
+
+                <div class="demo-card">
+                    <span class="metric-badge">95% AUTO-FIX</span>
+                    <div class="role-title">AutoFix Engine</div>
+                    <div class="description">Intelligent TypeScript auto-correction engine that automatically detects and fixes common test failures, achieving a 95% auto-correction rate without human intervention.</div>
+                    <div class="skills-list">
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">AST Parsing</span>
+                        <span class="skill-tag">Code Analysis</span>
+                        <span class="skill-tag">Auto-Repair</span>
+                    </div>
+                    <div class="leverage-box">Saves 80%+ of manual debug time by automatically identifying and patching broken assertions.</div>
+                </div>
+
+                <div class="demo-card">
+                    <span class="metric-badge">FULL-SPECTRUM</span>
+                    <div class="role-title">Full-Spectrum DAST</div>
+                    <div class="description">Dynamic Application Security Testing covering XSS, SQL Injection, and 0-Day vulnerability prevention with real-time threat detection and A-F security grading.</div>
+                    <div class="skills-list">
+                        <span class="skill-tag">DAST</span>
+                        <span class="skill-tag">XSS Detection</span>
+                        <span class="skill-tag">SQLi Prevention</span>
+                        <span class="skill-tag">0-Day Defense</span>
+                    </div>
+                    <div class="leverage-box">Scans 200+ attack vectors per run — security headers, CORS, auth flows, and injection points.</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Skills Section -->
     <section class="skills" id="skills">
         <div class="container">
@@ -1584,6 +1715,7 @@
   <span class="cmd-highlight">stats</span>     - Show arsenal statistics
   <span class="cmd-highlight">whoami</span>    - About the developer
   <span class="cmd-highlight">pillars</span>   - Show 7 Pillars Architecture
+  <span class="cmd-highlight">demos</span>     - Show live demonstrations
   <span class="cmd-highlight">clear</span>     - Clear terminal
   <span class="cmd-highlight">exit</span>      - Close terminal`,
 
@@ -1656,6 +1788,13 @@
   Arsenal:    QANTUM PRIME v35 · SINGULARITY (17 modules)
   Specialty:  AI-Driven Testing, Self-Healing Automation
   Philosophy: "I am what I possess. I can what I have."`,
+
+            demos: () => `
+<span class="output-success"><i class="fa-solid fa-play neon-icon green"></i> Live Demonstrations:</span>
+  [1] <span style="color: var(--success);">Self-Healing SEGC</span> - 0% Flakiness via Genetic Algorithms
+  [2] <span style="color: var(--secondary);">Chronos Predictor</span> - 24h AI Bug Forecasting
+  [3] <span style="color: var(--primary);">AutoFix Engine</span>    - 95% TypeScript auto-correction rate
+  [4] <span style="color: var(--warning);">Full-Spectrum DAST</span>  - XSS, SQLi &amp; 0-Day Prevention`,
 
             clear: () => {
                 terminalBody.innerHTML = '';
