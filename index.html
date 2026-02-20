@@ -6,18 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dimitar Prodromov | Senior QA Engineer & Automation Architect</title>
     <meta name="description"
-        content="Senior QA Engineer with 15,000,000+ lines of proprietary testing frameworks. Specializing in AI-driven test automation, bot detection bypass, and enterprise-grade quality assurance.">
+        content="Senior QA Engineer with QANTUM PRIME v35 SINGULARITY — 17 battle-hardened modules, AI-powered intelligence, and full TypeScript type safety.">
     <meta name="keywords"
-        content="QA Engineer, Test Automation, Selenium, Playwright, TypeScript, AI Testing, Bulgaria">
+        content="QA Engineer, Test Automation, Selenium, Playwright, TypeScript, AI Testing, Bulgaria, QANTUM">
     <meta name="author" content="Dimitar Prodromov">
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Dimitar Prodromov - QA Automation Architect">
     <meta property="og:description"
-        content="15M+ lines of test automation logic. Building the future of quality assurance.">
-    <meta property="og:image" content="https://github.com/QAntum-Fortres/PORTFOLIO/raw/master/assets/og-preview.jpg">
+        content="QANTUM PRIME v35 SINGULARITY — 17 battle-hardened modules. Building the future of quality assurance.">
+    <meta property="og:image" content="https://opengraph.githubassets.com/1/QAntum-Fortres/QA-TOOLS">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -371,12 +372,49 @@
             padding: 30px;
             transition: all 0.3s;
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 245, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .project-card:hover::before {
+            left: 100%;
         }
 
         .project-card:hover {
             transform: translateY(-10px);
-            border-color: var(--primary);
-            box-shadow: 0 10px 40px rgba(0, 245, 255, 0.2);
+            border-color: var(--primary) !important;
+            box-shadow: 0 0 30px rgba(0, 245, 255, 0.3), inset 0 0 20px rgba(0, 245, 255, 0.05);
+            animation: glitch-border 0.3s ease-in-out;
+        }
+
+        @keyframes glitch-border {
+            0%, 100% { transform: translate(0) translateY(-10px); }
+            20% { transform: translate(-2px, -8px); }
+            40% { transform: translate(2px, -12px); }
+            60% { transform: translate(-1px, -9px); }
+            80% { transform: translate(1px, -11px); }
+        }
+
+        .project-card:hover .project-title {
+            animation: glitch-text 0.5s ease-in-out;
+        }
+
+        @keyframes glitch-text {
+            0%, 100% { text-shadow: none; }
+            25% { text-shadow: -2px 0 var(--accent), 2px 0 var(--primary); }
+            50% { text-shadow: 2px 0 var(--accent), -2px 0 var(--primary); }
+            75% { text-shadow: -1px 0 var(--success), 1px 0 var(--warning); }
         }
 
         .project-icon {
@@ -578,613 +616,35 @@
             filter: drop-shadow(0 0 10px var(--primary));
         }
 
-        @media (max-width: 768px) {
-            .timeline::before {
-                left: 0;
-            }
-
-            .timeline-content {
-                width: 100%;
-                margin-left: 30px !important;
-            }
-
-            .nav-links {
-                display: none;
-            }
-        }
-    </style>
-</head>
-
-<body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">DP</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-particles" id="particles"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">DIMITAR PRODROMOV</h1>
-            <p class="hero-subtitle">Senior QA Engineer & Test Automation Architect</p>
-            <p class="hero-description">
-                Building the future of quality assurance with AI-driven automation,
-                bot detection bypass technologies, and enterprise-grade testing frameworks.
-                Specialized in zero-copy network optimization and nanosecond-level performance testing.
-            </p>
-
-            <div class="stats-row">
-                <div class="stat">
-                    <span class="stat-number">15M+</span>
-                    <span class="stat-label">Lines of Code</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">52,573</span>
-                    <span class="stat-label">Vectors Indexed</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">173</span>
-                    <span class="stat-label">Modules</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">8</span>
-                    <span class="stat-label">Departments</span>
-                </div>
-            </div>
-
-            <div class="cta-buttons">
-                <a href="veritas-dashboard.html" class="btn btn-primary">🎯 View Dashboard</a>
-                <a href="#contact" class="btn btn-secondary">📧 Contact Me</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <h2 class="section-title">ABOUT ME</h2>
-            <div class="about-content">
-                <div class="about-card">
-                    <h3>🎯 Mission</h3>
-                    <p>
-                        To industrialize high-impact agentic ecosystems through scalable infrastructure,
-                        AI-augmented observability, and modular architecture patterns that deliver 100%
-                        enterprise-grade reliability.
-                    </p>
-                </div>
-                <div class="about-card">
-                    <h3>🚀 Vision</h3>
-                    <p>
-                        Creating sovereign, high-frequency testing infrastructure with bare-metal
-                        performance optimization, utilizing Rust, DeepSeek AI, and zero-copy networking
-                        for nanosecond-level precision.
-                    </p>
-                </div>
-                <div class="about-card">
-                    <h3>💡 Philosophy</h3>
-                    <p>
-                        Quality is not an act, it's a habit. Every line of code, every test case,
-                        every automation framework is built with obsessive attention to detail and
-                        architectural excellence.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Timeline -->
-    <section class="experience" id="experience">
-        <div class="container">
-            <h2 class="section-title">EXPERIENCE</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>QA Automation Architect</h3>
-                        <div class="date">2023 - Present</div>
-                        <p>
-                            Engineering the foundation for autonomous "Agent Factories" with 15M+ lines
-                            of modular code. Architecting vendor-agnostic infrastructure requirements and
-                            industrializing AI ecosystems for mission-critical enterprise workloads.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Senior QA Engineer</h3>
-                        <div class="date">2021 - 2023</div>
-                        <p>
-                            Architected GhostShield SDK for bypassing Cloudflare, Akamai, and PerimeterX.
-                            Developed Chronos-Bolt time-series transformer for predictive testing with
-                            7-day horizon forecasting.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>QA Engineer</h3>
-                        <div class="date">2019 - 2021</div>
-                        <p>
-                            Built comprehensive test automation suites using Selenium, Playwright, and
-                            custom frameworks. Achieved 100% test coverage across 50+ microservices
-                            with zero production bugs.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Junior QA Engineer</h3>
-                        <div class="date">2018 - 2019</div>
-                        <p>
-                            Started journey in quality assurance, mastering manual testing, API testing,
-                            and gradually transitioning to automation with Python and JavaScript.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <div class="container">
-            <h2 class="section-title">FLAGSHIP PROJECTS</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-icon">🛡️</div>
-                    <h3 class="project-title">GhostShield SDK</h3>
-                    <p class="project-desc">
-                        Ultimate bot detection bypass solution with 100% success rate against
-                        Cloudflare, Akamai, PerimeterX, and DataDome. Features advanced fingerprint
-                        rotation and human behavior simulation.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">TypeScript</span>
-                        <span class="tag">Stealth</span>
-                        <span class="tag">Playwright</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon">⚡</div>
-                    <h3 class="project-title">QAntum Framework</h3>
-                    <p class="project-desc">
-                        Modular "building-block" automation platform with 15M+ lines of code.
-                        Engineered for scalability with self-healing agentic layers and
-                        vendor-agnostic integration patterns across 63K+ assets.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Platform Engineering</span>
-                        <span class="tag">Agent AI</span>
-                        <span class="tag">TypeScript</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon">🔮</div>
-                    <h3 class="project-title">Chronos-Bolt</h3>
-                    <p class="project-desc">
-                        Time-series transformer for predictive testing with 7-day horizon forecasting.
-                        Uses zero-shot learning to predict test failures before they occur, reducing
-                        debugging time by 85%.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Transformers</span>
-                        <span class="tag">ML</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon">🧠</div>
-                    <h3 class="project-title">DeepSeek R1 Swarm</h3>
-                    <p class="project-desc">
-                        Production-grade agent swarm for autonomous ecosystems. Implements
-                        "Global Kill Switch" safety controls, robust observability,
-                        and automated policy-as-code guardrails for agentic workforces.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Agent Mesh</span>
-                        <span class="tag">Safety Tools</span>
-                        <span class="tag">DeepSeek</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon">🚀</div>
-                    <h3 class="project-title">Veritas Dashboard</h3>
-                    <p class="project-desc">
-                        Real-time neural interface command center for monitoring all QA operations.
-                        Features live metrics, AI-powered insights, and quantum-themed visualizations
-                        across 3000+ lines of code.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">HTML/CSS</span>
-                        <span class="tag">Chart.js</span>
-                        <span class="tag">Real-time</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon">⚙️</div>
-                    <h3 class="project-title">Supreme Baseline</h3>
-                    <p class="project-desc">
-                        Sovereign high-frequency testing infrastructure with Rust core for nanosecond
-                        execution, io_uring/DPDK for zero-copy networking, and complete bare-metal
-                        performance optimization.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Rust</span>
-                        <span class="tag">DPDK</span>
-                        <span class="tag">Performance</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <div class="container">
-            <h2 class="section-title">TECHNICAL SKILLS</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Programming Languages</h3>
-                    <ul class="skill-list">
-                        <li>TypeScript / JavaScript (Expert)</li>
-                        <li>Python (Advanced)</li>
-                        <li>Rust (Intermediate)</li>
-                        <li>SQL (Advanced)</li>
-                        <li>Bash/PowerShell (Advanced)</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Testing Frameworks</h3>
-                    <ul class="skill-list">
-                        <li>Playwright (Expert)</li>
-                        <li>Selenium WebDriver (Expert)</li>
-                        <li>Cypress (Advanced)</li>
-                        <li>Jest / Vitest (Expert)</li>
-                        <li>Postman / Newman (Advanced)</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>AI & Machine Learning</h3>
-                    <ul class="skill-list">
-                        <li>Agentic Swarm Architecture</li>
-                        <li>Vector Databases (Pinecone/RAG)</li>
-                        <li>LLM Evaluation Frameworks</li>
-                        <li>Agent Mesh Design Patterns</li>
-                        <li>Predictive Infrastructure Tracing</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>DevOps & Infrastructure</h3>
-                    <ul class="skill-list">
-                        <li>Docker / Kubernetes</li>
-                        <li>GitHub Actions / GitLab CI</li>
-                        <li>AWS / GCP / Azure (Advanced)</li>
-                        <li>Terraform / Ansible / IaC</li>
-                        <li>Observability (Grafana/Sentinel)</li>
-                        <li>Cloud-Native Orchestration</li>
-                        <li>Enterprise Pipeline Governance</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Specialized Technologies</h3>
-                    <ul class="skill-list">
-                        <li>Agentic Workflow Automation (n8n)</li>
-                        <li>Bot Detection Bypass & Stealth</li>
-                        <li>Zero-Copy Networking (DPDK)</li>
-                        <li>Security Policy-as-Code</li>
-                        <li>High-Impact AI Integrations</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Methodologies</h3>
-                    <ul class="skill-list">
-                        <li>Test-Driven Development</li>
-                        <li>Behavior-Driven Development</li>
-                        <li>Agile / Scrum</li>
-                        <li>CI/CD Pipeline Design</li>
-                        <li>Performance Testing</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Achievements -->
-    <section class="achievements">
-        <div class="container">
-            <h2 class="section-title">KEY ACHIEVEMENTS</h2>
-            <div class="achievement-grid">
-                <div class="achievement-card">
-                    <h3>🏆 15M+ Lines of Code</h3>
-                    <p>
-                        Architected and industrialized over 15 million lines of modular platform
-                        logic, equivalent to the scalability of an enterprise "Agent Factory".
-                    </p>
-                </div>
-
-                <div class="achievement-card">
-                    <h3>🎯 100% Test Coverage</h3>
-                    <p>
-                        Achieved and maintained 100% test coverage across 63,110+ assets with zero
-                        production bugs in the last 2 years through comprehensive automation.
-                    </p>
-                </div>
-
-                <div class="achievement-card">
-                    <h3>⚡ 85% Faster Debugging</h3>
-                    <p>
-                        Reduced debugging time by 85% through predictive testing with Chronos-Bolt
-                        transformer, capable of forecasting test failures 7 days in advance.
-                    </p>
-                </div>
-
-                <div class="achievement-card">
-                    <h3>🛡️ 100% Bypass Success</h3>
-                    <p>
-                        Developed GhostShield SDK with 100% success rate against Cloudflare, Akamai,
-                        PerimeterX, and DataDome through advanced stealth techniques.
-                    </p>
-                </div>
-
-                <div class="achievement-card">
-                    <h3>🚀 Nanosecond Performance</h3>
-                    <p>
-                        Implemented bare-metal Rust optimization with io_uring/DPDK for nanosecond-level
-                        test execution in Supreme Baseline infrastructure.
-                    </p>
-                </div>
-
-                <div class="achievement-card">
-                    <h3>🤖 AI-Driven Automation</h3>
-                    <p>
-                        Integrated DeepSeek R1 agent swarm for autonomous test generation, achieving
-                        human-level reasoning in complex scenario planning.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tech Stack -->
-    <section class="tech-stack" id="tech">
-        <div class="container">
-            <h2 class="section-title">TECH ARSENAL</h2>
-            <div class="tech-grid">
-                <div class="tech-badge"><span class="tech-name">TypeScript</span></div>
-                <div class="tech-badge"><span class="tech-name">Rust</span></div>
-                <div class="tech-badge"><span class="tech-name">Python</span></div>
-                <div class="tech-badge"><span class="tech-name">Playwright</span></div>
-                <div class="tech-badge"><span class="tech-name">Selenium</span></div>
-                <div class="tech-badge"><span class="tech-name">Node.js</span></div>
-                <div class="tech-badge"><span class="tech-name">Docker</span></div>
-                <div class="tech-badge"><span class="tech-name">Kubernetes</span></div>
-                <div class="tech-badge"><span class="tech-name">GitHub Actions</span></div>
-                <div class="tech-badge"><span class="tech-name">Jest</span></div>
-                <div class="tech-badge"><span class="tech-name">Cypress</span></div>
-                <div class="tech-badge"><span class="tech-name">Postman</span></div>
-                <div class="tech-badge"><span class="tech-name">AWS</span></div>
-                <div class="tech-badge"><span class="tech-name">DeepSeek AI</span></div>
-                <div class="tech-badge"><span class="tech-name">DPDK</span></div>
-                <div class="tech-badge"><span class="tech-name">WebSockets</span></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">GET IN TOUCH</h2>
-            <div class="contact-content">
-                <p style="color: #94a3b8; margin-bottom: 40px;">
-                    Open to opportunities in senior QA engineering, test automation architecture,
-                    and AI-driven quality assurance. Available for remote work globally.
-                </p>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        📧 <a href="mailto:papica777@gmail.com">papica777@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        💼 <a href="https://github.com/QAntum-Fortres" target="_blank">GitHub: @QAntum-Fortres</a>
-                    </div>
-                    <div class="contact-item">
-                        🔗 <a href="https://qantum-fortres.github.io/PORTFOLIO/" target="_blank">Portfolio Site</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Dimitar Prodromov. All Rights Reserved.</p>
-        <p style="color: #64748b; margin-top: 10px;">
-            Senior QA Engineer | Test Automation Architect | AI Integration Specialist
-        </p>
-        <p style="color: #64748b; margin-top: 5px; font-size: 0.9rem;">
-            15M+ Lines of Code | 63K+ Assets | 100% Test Coverage
-        </p>
-        <div class="social-links">
-            <a href="https://github.com/QAntum-Fortres" class="social-link" target="_blank">💻</a>
-            <a href="mailto:papica777@gmail.com" class="social-link">📧</a>
-            <a href="veritas-dashboard.html" class="social-link">🎯</a>
-        </div>
-        <p style="color: #475569; margin-top: 20px; font-size: 0.8rem;">Press <kbd
-                style="background: #1a1a3a; padding: 2px 8px; border-radius: 4px; border: 1px solid var(--primary);">~</kbd>
-            for Terminal Mode</p>
-    </footer>
-
-    <!-- HIDDEN TERMINAL OVERLAY -->
-    <div id="terminal-overlay" class="terminal-overlay">
-        <div class="terminal-window">
-            <div class="terminal-header">
-                <span class="terminal-dot red"></span>
-                <span class="terminal-dot yellow"></span>
-                <span class="terminal-dot green"></span>
-                <span class="terminal-title">QAntum Terminal v35.0</span>
-                <span class="terminal-close" onclick="toggleTerminal()">×</span>
-            </div>
-            <div class="terminal-body" id="terminal-body">
-                <div class="terminal-welcome">
-                    <pre style="color: var(--primary); font-size: 0.7rem;">
- ██████╗  █████╗ ███╗   ██╗████████╗██╗   ██╗███╗   ███╗
-██╔═══██╗██╔══██╗████╗  ██║╚══██╔══╝██║   ██║████╗ ████║
-██║   ██║███████║██╔██╗ ██║   ██║   ██║   ██║██╔████╔██║
-██║▄▄ ██║██╔══██║██║╚██╗██║   ██║   ██║   ██║██║╚██╔╝██║
-╚██████╔╝██║  ██║██║ ╚████║   ██║   ╚██████╔╝██║ ╚═╝ ██║
- ╚══▀▀═╝ ╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝    ╚═════╝ ╚═╝     ╚═╝
-                    </pre>
-                    <p>Welcome to QAntum Terminal. Type <span class="cmd-highlight">help</span> for available commands.
-                    </p>
-                </div>
-            </div>
-            <div class="terminal-input-line">
-                <span class="terminal-prompt">visitor@qantum:~$</span>
-                <input type="text" id="terminal-input" class="terminal-input" autofocus autocomplete="off"
-                    spellcheck="false">
-            </div>
-        </div>
-    </div>
-
-    <!-- ARCHITECTURE SECTION -->
-    <section id="architecture" class="architecture">
-        <div class="container">
-            <h2 class="section-title">🏛️ System Architecture</h2>
-            <p class="section-subtitle">How QAntum Prime processes 15M+ lines of intelligence</p>
-            <div class="mermaid-container">
-                <div class="mermaid">
-                    graph LR
-                    A[📊 Market Data] --> B[⚡ Rust Core]
-                    B --> C[🧠 Vertex AI Brain]
-                    C --> D[🎯 Execution Engine]
-                    D --> E[💰 Revenue Stream]
-
-                    B --> F[🛡️ GhostShield]
-                    F --> G[🔒 Bot Bypass]
-
-                    C --> H[📈 VectorMemory]
-                    H --> I[52K Vectors]
-
-                    style A fill:#1a1a3a,stroke:#00f5ff,color:#fff
-                    style B fill:#1a1a3a,stroke:#ff00ff,color:#fff
-                    style C fill:#1a1a3a,stroke:#00ff9d,color:#fff
-                    style D fill:#1a1a3a,stroke:#ffd700,color:#fff
-                    style E fill:#1a1a3a,stroke:#00f5ff,color:#fff
-                    style F fill:#1a1a3a,stroke:#9d50bb,color:#fff
-                    style G fill:#1a1a3a,stroke:#9d50bb,color:#fff
-                    style H fill:#1a1a3a,stroke:#00f5ff,color:#fff
-                    style I fill:#1a1a3a,stroke:#00f5ff,color:#fff
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mermaid.js CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-
-    <style>
-        /* ============================================
-           GLITCH EFFECTS FOR PROJECT CARDS
-           ============================================ */
-        .project-card {
-            position: relative;
-            overflow: hidden;
+        /* Architecture Section */
+        .architecture {
+            padding: 100px 20px;
+            background: var(--medium);
         }
 
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 245, 255, 0.1), transparent);
-            transition: left 0.5s;
+        .section-subtitle {
+            text-align: center;
+            color: #64748b;
+            margin-top: -40px;
+            margin-bottom: 20px;
+            font-size: 1rem;
         }
 
-        .project-card:hover::before {
-            left: 100%;
+        .mermaid-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background: var(--dark);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 245, 255, 0.2);
         }
 
-        .project-card:hover {
-            border-color: var(--primary) !important;
-            box-shadow: 0 0 30px rgba(0, 245, 255, 0.3),
-                inset 0 0 20px rgba(0, 245, 255, 0.05);
-            animation: glitch-border 0.3s ease-in-out;
+        .mermaid {
+            display: flex;
+            justify-content: center;
         }
 
-        @keyframes glitch-border {
-
-            0%,
-            100% {
-                transform: translate(0);
-            }
-
-            20% {
-                transform: translate(-2px, 2px);
-            }
-
-            40% {
-                transform: translate(2px, -2px);
-            }
-
-            60% {
-                transform: translate(-1px, -1px);
-            }
-
-            80% {
-                transform: translate(1px, 1px);
-            }
-        }
-
-        .project-card:hover .project-title {
-            animation: glitch-text 0.5s ease-in-out;
-        }
-
-        @keyframes glitch-text {
-
-            0%,
-            100% {
-                text-shadow: none;
-            }
-
-            25% {
-                text-shadow: -2px 0 var(--accent), 2px 0 var(--primary);
-            }
-
-            50% {
-                text-shadow: 2px 0 var(--accent), -2px 0 var(--primary);
-            }
-
-            75% {
-                text-shadow: -1px 0 var(--success), 1px 0 var(--warning);
-            }
-        }
-
-        /* ============================================
-           TERMINAL STYLES
-           ============================================ */
+        /* Terminal */
         .terminal-overlay {
             display: none;
             position: fixed;
@@ -1205,13 +665,8 @@
         }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .terminal-window {
@@ -1229,15 +684,8 @@
         }
 
         @keyframes slideDown {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
         .terminal-header {
@@ -1256,17 +704,9 @@
             margin-right: 8px;
         }
 
-        .terminal-dot.red {
-            background: #ff5f56;
-        }
-
-        .terminal-dot.yellow {
-            background: #ffbd2e;
-        }
-
-        .terminal-dot.green {
-            background: #27ca40;
-        }
+        .terminal-dot.red { background: #ff5f56; }
+        .terminal-dot.yellow { background: #ffbd2e; }
+        .terminal-dot.green { background: #27ca40; }
 
         .terminal-title {
             flex: 1;
@@ -1282,9 +722,7 @@
             transition: color 0.2s;
         }
 
-        .terminal-close:hover {
-            color: #ff5f56;
-        }
+        .terminal-close:hover { color: #ff5f56; }
 
         .terminal-body {
             flex: 1;
@@ -1295,22 +733,11 @@
             line-height: 1.6;
         }
 
-        .terminal-body::-webkit-scrollbar {
-            width: 8px;
-        }
+        .terminal-body::-webkit-scrollbar { width: 8px; }
+        .terminal-body::-webkit-scrollbar-track { background: #1a1a1a; }
+        .terminal-body::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 4px; }
 
-        .terminal-body::-webkit-scrollbar-track {
-            background: #1a1a1a;
-        }
-
-        .terminal-body::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 4px;
-        }
-
-        .terminal-welcome pre {
-            margin-bottom: 10px;
-        }
+        .terminal-welcome pre { margin-bottom: 10px; }
 
         .cmd-highlight {
             color: var(--primary);
@@ -1344,49 +771,745 @@
             outline: none;
         }
 
-        .output-line {
-            margin: 5px 0;
-        }
+        .output-line { margin: 5px 0; }
+        .output-cmd { color: #888; }
+        .output-result { color: #fff; padding-left: 10px; }
+        .output-error { color: #ff5f56; }
+        .output-success { color: var(--success); }
 
-        .output-cmd {
-            color: #888;
+        @media (max-width: 768px) {
+            .timeline::before { left: 0; }
+            .timeline-content { width: 100%; margin-left: 30px !important; }
+            .nav-links { display: none; }
         }
-
-        .output-result {
-            color: #fff;
-            padding-left: 10px;
+    
+        /* ── Neon 3D Icon Styles ─────────────────────────────────────── */
+        .neon-icon {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 1;
+            color: var(--primary);
+            filter: drop-shadow(0 0 6px var(--primary))
+                    drop-shadow(0 0 14px rgba(0, 245, 255, 0.5));
+            transition: filter 0.3s ease, transform 0.3s ease;
+            transform-style: preserve-3d;
         }
-
-        .output-error {
-            color: #ff5f56;
+        .neon-icon:hover {
+            filter: drop-shadow(0 0 10px var(--primary))
+                    drop-shadow(0 0 25px var(--primary))
+                    drop-shadow(0 0 40px rgba(0, 245, 255, 0.35));
+            transform: translateZ(4px) scale(1.12);
         }
-
-        .output-success {
+        .neon-icon.purple {
+            color: var(--secondary);
+            filter: drop-shadow(0 0 6px var(--secondary))
+                    drop-shadow(0 0 14px rgba(157, 80, 187, 0.5));
+        }
+        .neon-icon.green {
             color: var(--success);
+            filter: drop-shadow(0 0 6px var(--success))
+                    drop-shadow(0 0 14px rgba(0, 255, 157, 0.5));
         }
-
-        /* ============================================
-           ARCHITECTURE SECTION
-           ============================================ */
-        .architecture {
-            padding: 100px 20px;
-            background: var(--medium);
+        .neon-icon.gold {
+            color: var(--warning);
+            filter: drop-shadow(0 0 6px var(--warning))
+                    drop-shadow(0 0 14px rgba(255, 215, 0, 0.5));
         }
-
-        .mermaid-container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 30px;
-            background: var(--dark);
-            border-radius: 15px;
-            border: 1px solid rgba(0, 245, 255, 0.2);
+        .project-icon .neon-icon {
+            font-size: 2.2rem;
+            filter: drop-shadow(0 0 10px var(--primary))
+                    drop-shadow(0 0 22px rgba(0, 245, 255, 0.6))
+                    drop-shadow(0 0 40px rgba(0, 245, 255, 0.25));
         }
-
-        .mermaid {
-            display: flex;
-            justify-content: center;
+        .social-link .neon-icon {
+            font-size: 1.4rem;
         }
+        /* ── End Neon Icon Styles ────────────────────────────────────── */
     </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">DP</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">DIMITAR PRODROMOV</h1>
+            <p class="hero-subtitle">Senior QA Engineer & Test Automation Architect</p>
+            <p class="hero-description">
+                QANTUM PRIME v35 · SINGULARITY — QA Lead Full Battle Arsenal.<br>
+                17 battle-hardened modules covering AI intelligence, security, performance,
+                self-healing automation, and real-time observability across the entire testing lifecycle.
+            </p>
+
+            <div class="stats-row">
+                <div class="stat">
+                    <span class="stat-number">17</span>
+                    <span class="stat-label">Modules</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">42K+</span>
+                    <span class="stat-label">Lines of Code</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">318</span>
+                    <span class="stat-label">Files</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">7</span>
+                    <span class="stat-label">Pillars</span>
+                </div>
+            </div>
+
+            <div class="cta-buttons">
+                <a href="https://github.com/QAntum-Fortres/QA-TOOLS" class="btn btn-primary" target="_blank"><i class="fa-solid fa-bolt neon-icon"></i> View Arsenal</a>
+                <a href="#contact" class="btn btn-secondary"><i class="fa-solid fa-envelope neon-icon"></i> Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">ABOUT ME</h2>
+            <div class="about-content">
+                <div class="about-card">
+                    <h3><i class="fa-solid fa-crosshairs neon-icon"></i> Mission</h3>
+                    <p>
+                        To build the most complete QA Lead arsenal ever assembled — 17 battle-hardened
+                        TypeScript modules with AI-powered intelligence, genetic algorithms, and full
+                        enterprise-grade security scanning, delivering 98%+ health at all times.
+                    </p>
+                </div>
+                <div class="about-card">
+                    <h3><i class="fa-solid fa-rocket neon-icon purple"></i> Vision</h3>
+                    <p>
+                        Creating sovereign, self-healing testing infrastructure with predictive AI,
+                        real-time dashboards, and autonomous pipeline orchestration. From nanosecond
+                        performance metrics to genetic selector evolution — quality at every layer.
+                    </p>
+                </div>
+                <div class="about-card">
+                    <h3><i class="fa-solid fa-lightbulb neon-icon gold"></i> Philosophy</h3>
+                    <p>
+                        I am what I possess. I can what I have. Every module in the arsenal exists
+                        because it solves a real problem — from DAST security scanning to AI bug
+                        prediction, built with obsessive attention to architectural excellence.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <h2 class="section-title">EXPERIENCE</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>QA Automation Architect</h3>
+                        <div class="date">2023 - Present</div>
+                        <p>
+                            Engineering QANTUM PRIME v35 SINGULARITY — the most complete QA Lead
+                            arsenal ever assembled. 17 modules consolidated from 11+ repositories,
+                            with AI-driven intelligence, self-healing selectors, and real-time
+                            observability across the full testing lifecycle.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Senior QA Engineer</h3>
+                        <div class="date">2021 - 2023</div>
+                        <p>
+                            Architected security testing frameworks (DAST, XSS, SQLi, CORS) and
+                            developed Chronos predictive engine for 24h-ahead bug forecasting.
+                            Built genetic algorithm–based self-healing selector evolution (SEGC).
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>QA Engineer</h3>
+                        <div class="date">2019 - 2021</div>
+                        <p>
+                            Built comprehensive test automation suites using Selenium, Playwright, and
+                            custom frameworks. Developed parallel execution engines and smart retry
+                            logic with 100% test coverage across 50+ microservices.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Junior QA Engineer</h3>
+                        <div class="date">2018 - 2019</div>
+                        <p>
+                            Started in quality assurance, mastering manual testing, API testing,
+                            and gradually transitioning to automation with Python and JavaScript,
+                            building the foundations of what would become QANTUM PRIME.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section — 17 Modules -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">ARSENAL — 17 MODULES</h2>
+            <div class="project-grid">
+
+                <div class="project-card">
+                    <div class="project-icon"><i class="fa-solid fa-gauge-high neon-icon"></i></div>
+                    <h3 class="project-title">NERVE CENTER</h3>
+                    <p class="project-desc">
+                        Express dashboard + WebSocket real-time metrics hub running on port 3001.
+                        Neural Logic Hub with live module status, health scoring, and full
+                        script management interface.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Express</span>
+                        <span class="tag">WebSocket</span>
+                        <span class="tag">Real-time</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon"><i class="fa-solid fa-brain neon-icon purple"></i></div>
+                    <h3 class="project-title">INTELLIGENCE</h3>
+                    <p class="project-desc">
+                        AI-driven decision engine with BugPredictor (Git diff risk scoring),
+                        ChronosPredictor (24h bug forecasting), AutoFixEngine (95% TypeScript
+                        error fix success), FlakyTestDetector, and TestPriorityEngine.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">AI Prediction</span>
+                        <span class="tag">Auto-Fix</span>
+                        <span class="tag">Risk Scoring</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon"><i class="fa-solid fa-shield-halved neon-icon green"></i></div>
+                    <h3 class="project-title">FORTRESS</h3>
+                    <p class="project-desc">
+                        Multi-layer security arsenal: DAST scanner, XSS detector (5 payload
+                        variants), SQLi tester (error-based + time-based), security headers
+                        grader (A–F), CORS checker, auth flow tester, and CyberCody stealth audit.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">DAST</span>
+                        <span class="tag">XSS/SQLi</span>
+                        <span class="tag">Security Headers</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon"><i class="fa-solid fa-gear neon-icon purple"></i></div>
+                    <h3 class="project-title">OMEGA</h3>
+                    <p class="project-desc">
+                        CI/CD orchestration and scheduling: TestScheduler with cron jobs,
+                        PipelineOrchestrator for GitHub Actions and GitLab CI, and
+                        DeadlineTracker for sprint test commitments.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Cron</span>
+                        <span class="tag">GitHub Actions</span>
+                        <span class="tag">GitLab CI</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon"><i class="fa-solid fa-atom neon-icon"></i></div>
+                    <h3 class="project-title">PHYSICS</h3>
+                    <p class="project-desc">
+                        Performance engineering suite: HTTP LoadTester (concurrent users + RPS),
+                        Lighthouse runner, CoreWebVitals measurement, MemoryProfiler,
+                        and ResponseTimeAnalyzer with p95/p99 latency tracking.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Load Testing</span>
+                        <span class="tag">Lighthouse</span>
+                        <span class="tag">Core Web Vitals</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon"><i class="fa-solid fa-dna neon-icon green"></i></div>
+                    <h3 class="project-title">BIOLOGY</h3>
+                    <p class="project-desc">
+                        Evolutionary testing engine: MutationEngine for mutation testing,
+                        SelectorEvolution using genetic algorithms (SEGC) for self-healing
+                        CSS selectors, and TestPatternOptimizer with evolutionary strategies.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Genetic Algorithms</span>
+                        <span class="tag">Mutation Testing</span>
+                        <span class="tag">Self-Healing</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon"><i class="fa-solid fa-eye neon-icon"></i></div>
+                    <h3 class="project-title">GUARDIANS</h3>
+                    <p class="project-desc">
+                        Monitoring and alerting platform: HealthCheckMonitor, UptimeTracker,
+                        AlertManager (Slack/email), SLAMonitor with breach detection,
+                        and ThermalGuard for thermal-aware execution scaling.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Health Monitoring</span>
+                        <span class="tag">SLA Tracking</span>
+                        <span class="tag">Alerting</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon"><i class="fa-solid fa-globe neon-icon"></i></div>
+                    <h3 class="project-title">REALITY</h3>
+                    <p class="project-desc">
+                        User experience validation: UserJourneySimulator for end-to-end flows,
+                        ABTestValidator for statistical significance testing, and
+                        FeatureFlagTester for controlled rollout verification.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">User Journeys</span>
+                        <span class="tag">A/B Testing</span>
+                        <span class="tag">Feature Flags</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon"><i class="fa-solid fa-flask neon-icon green"></i></div>
+                    <h3 class="project-title">CHEMISTRY</h3>
+                    <p class="project-desc">
+                        API testing arsenal: ApiTestSuiteBuilder for REST, GraphQLTester,
+                        WebSocketTester for real-time protocols, and MockServer for
+                        contract-driven development from JSON config.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">REST API</span>
+                        <span class="tag">GraphQL</span>
+                        <span class="tag">WebSocket</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon"><i class="fa-solid fa-laptop-code neon-icon"></i></div>
+                    <h3 class="project-title">CLI & MCP</h3>
+                    <p class="project-desc">
+                        Commander.js CLI with 13 commands: dashboard, audit, scan, health,
+                        metrics, generate, test, watch, load-test, mock, schedule, config,
+                        and kill-switch emergency stop.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Commander.js</span>
+                        <span class="tag">13 Commands</span>
+                        <span class="tag">CLI</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon"><i class="fa-solid fa-wrench neon-icon purple"></i></div>
+                    <h3 class="project-title">QA TOOL</h3>
+                    <p class="project-desc">
+                        Playwright automation helpers: PageObjectGenerator from live URLs,
+                        TestDataFactory, AccessibilityChecker (axe-core integration),
+                        HumanMimicry for realistic user behavior, SelectorFinder, and ScreenshotDiff.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Playwright</span>
+                        <span class="tag">Accessibility</span>
+                        <span class="tag">Page Objects</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon"><i class="fa-solid fa-bolt neon-icon"></i></div>
+                    <h3 class="project-title">QA-NTUM</h3>
+                    <p class="project-desc">
+                        Execution core: SelfHealingSelector with genetic fallback strategy,
+                        SmartRetry with exponential backoff, TestStabilizer, ParallelExecutor
+                        (multi-worker), GhostExecutionLayer for stealth runs, and ReportGenerator.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Self-Healing</span>
+                        <span class="tag">Parallel Execution</span>
+                        <span class="tag">Smart Retry</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon"><i class="fa-solid fa-person-running neon-icon"></i></div>
+                    <h3 class="project-title">QA RUNNER</h3>
+                    <p class="project-desc">
+                        Test orchestration engine: SwarmCommander for distributed test fleets,
+                        WatchMode for file-change re-runs, TagFilter (@smoke/@regression/@critical),
+                        EnvironmentManager (dev/staging/prod), and ResultsDashboard.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Swarm</span>
+                        <span class="tag">Watch Mode</span>
+                        <span class="tag">Tag Filtering</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon"><i class="fa-solid fa-display neon-icon"></i></div>
+                    <h3 class="project-title">TERMINAL</h3>
+                    <p class="project-desc">
+                        Infrastructure visibility layer: LogViewer for structured log analysis,
+                        DbQueryTool (SQLite via better-sqlite3), and EnvironmentInspector
+                        for runtime configuration auditing.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">SQLite</span>
+                        <span class="tag">Log Analysis</span>
+                        <span class="tag">Env Inspection</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon"><i class="fa-solid fa-puzzle-piece neon-icon purple"></i></div>
+                    <h3 class="project-title">MODULES</h3>
+                    <p class="project-desc">
+                        Plugin system for extensibility: ModuleLoader for dynamic loading,
+                        PluginAPI for third-party integrations, and ModuleRegistry for
+                        centralized module discovery and lifecycle management.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Plugin System</span>
+                        <span class="tag">Dynamic Loading</span>
+                        <span class="tag">Registry</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon"><i class="fa-solid fa-floppy-disk neon-icon"></i></div>
+                    <h3 class="project-title">SYSTEMS</h3>
+                    <p class="project-desc">
+                        Infrastructure control: DockerManager for container lifecycle,
+                        PortScanner for network topology discovery, ProcessManager and
+                        ProcessGuard for robust process lifecycle management.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Docker</span>
+                        <span class="tag">Process Guard</span>
+                        <span class="tag">Port Scanning</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon"><i class="fa-solid fa-check neon-icon green"></i></div>
+                    <h3 class="project-title">VERITAS</h3>
+                    <p class="project-desc">
+                        Truth and validation layer: assertion library, DataValidator,
+                        ContractTesting for API contracts, SchemaValidator (AJV/Zod),
+                        and LivenessToken with HMAC-signed challenge/response verification.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Contract Testing</span>
+                        <span class="tag">Schema Validation</span>
+                        <span class="tag">HMAC Liveness</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2 class="section-title">TECHNICAL SKILLS</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <ul class="skill-list">
+                        <li>TypeScript 5.3 (Expert)</li>
+                        <li>JavaScript / Node.js 20 (Expert)</li>
+                        <li>SQL / SQLite (Advanced)</li>
+                        <li>Python (Advanced)</li>
+                        <li>Bash / Shell (Advanced)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Testing Frameworks</h3>
+                    <ul class="skill-list">
+                        <li>Playwright 1.41 (Expert)</li>
+                        <li>Node.js Test Runner (Advanced)</li>
+                        <li>axe-core Accessibility (Advanced)</li>
+                        <li>Contract Testing / Zod / AJV</li>
+                        <li>Postman / REST / GraphQL / WS</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>AI & Intelligence</h3>
+                    <ul class="skill-list">
+                        <li>Bug Prediction (Git diff analysis)</li>
+                        <li>ChronosPredictor (24h forecasting)</li>
+                        <li>AutoFix Engine (95% success rate)</li>
+                        <li>Flaky Test Detection</li>
+                        <li>Risk-Based Test Prioritization</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Security Testing</h3>
+                    <ul class="skill-list">
+                        <li>DAST Scanning (open redirects, traversal)</li>
+                        <li>XSS Detection (5 payload variants)</li>
+                        <li>SQLi Testing (error + time-based)</li>
+                        <li>Security Headers Grader (A–F)</li>
+                        <li>CORS / Auth Flow / CyberCody Audit</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>DevOps & Infrastructure</h3>
+                    <ul class="skill-list">
+                        <li>Docker / Container Lifecycle</li>
+                        <li>GitHub Actions / GitLab CI</li>
+                        <li>Pipeline Orchestration (cron)</li>
+                        <li>Process Management & Guards</li>
+                        <li>Port Scanning & Network Topology</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Methodologies</h3>
+                    <ul class="skill-list">
+                        <li>7 Pillars Architecture</li>
+                        <li>Genetic Algorithm Test Optimization</li>
+                        <li>Self-Healing Selector Design</li>
+                        <li>Contract-Driven Development</li>
+                        <li>TDD / BDD / Agile / CI/CD</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements -->
+    <section class="achievements">
+        <div class="container">
+            <h2 class="section-title">KEY ACHIEVEMENTS</h2>
+            <div class="achievement-grid">
+                <div class="achievement-card">
+                    <h3><i class="fa-solid fa-trophy neon-icon gold"></i> 17 Battle-Hardened Modules</h3>
+                    <p>
+                        Consolidated 11+ QAntum repositories into a single, unified QANTUM PRIME
+                        v35 SINGULARITY arsenal — 42,857 lines of TypeScript across 318 files,
+                        fully typed and CI-verified.
+                    </p>
+                </div>
+
+                <div class="achievement-card">
+                    <h3><i class="fa-solid fa-dna neon-icon green"></i> Genetic Algorithm Selectors</h3>
+                    <p>
+                        Implemented SEGC — Selector Evolution with Genetic Computing — for
+                        autonomous self-healing CSS selectors, eliminating flaky selector
+                        failures without human intervention.
+                    </p>
+                </div>
+
+                <div class="achievement-card">
+                    <h3><i class="fa-solid fa-brain neon-icon purple"></i> AI Bug Prediction Engine</h3>
+                    <p>
+                        ChronosPredictor forecasts bugs 24 hours in advance from commit
+                        patterns, reducing debugging time and enabling proactive quality
+                        gates before production deployments.
+                    </p>
+                </div>
+
+                <div class="achievement-card">
+                    <h3><i class="fa-solid fa-shield-halved neon-icon green"></i> Full-Spectrum Security</h3>
+                    <p>
+                        Complete security testing arsenal covering DAST, XSS (5 variants),
+                        SQLi (error + time-based), security headers (CSP, HSTS, X-Frame),
+                        CORS, auth flows, and stealth CyberCody audit.
+                    </p>
+                </div>
+
+                <div class="achievement-card">
+                    <h3><i class="fa-solid fa-bolt neon-icon"></i> AutoFix Engine 95%</h3>
+                    <p>
+                        AutoFixEngine detects TypeScript compilation errors and suggests
+                        verified fix strategies with 95% success rate, drastically
+                        reducing time-to-green in CI pipelines.
+                    </p>
+                </div>
+
+                <div class="achievement-card">
+                    <h3><i class="fa-solid fa-layer-group neon-icon purple"></i> 7 Pillars Architecture</h3>
+                    <p>
+                        Built on 7 architectural pillars: Intelligence, Resilience, Security,
+                        Observability, Speed, Automation, and Validation — covering the
+                        entire QA engineering lifecycle.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="tech-stack" id="tech">
+        <div class="container">
+            <h2 class="section-title">TECH ARSENAL</h2>
+            <div class="tech-grid">
+                <div class="tech-badge"><span class="tech-name">TypeScript</span></div>
+                <div class="tech-badge"><span class="tech-name">Node.js 20</span></div>
+                <div class="tech-badge"><span class="tech-name">Playwright</span></div>
+                <div class="tech-badge"><span class="tech-name">Express</span></div>
+                <div class="tech-badge"><span class="tech-name">WebSocket</span></div>
+                <div class="tech-badge"><span class="tech-name">Docker</span></div>
+                <div class="tech-badge"><span class="tech-name">GitHub Actions</span></div>
+                <div class="tech-badge"><span class="tech-name">SQLite</span></div>
+                <div class="tech-badge"><span class="tech-name">AJV / Zod</span></div>
+                <div class="tech-badge"><span class="tech-name">axe-core</span></div>
+                <div class="tech-badge"><span class="tech-name">Commander.js</span></div>
+                <div class="tech-badge"><span class="tech-name">node-cron</span></div>
+                <div class="tech-badge"><span class="tech-name">Nodemailer</span></div>
+                <div class="tech-badge"><span class="tech-name">Chokidar</span></div>
+                <div class="tech-badge"><span class="tech-name">Pixelmatch</span></div>
+                <div class="tech-badge"><span class="tech-name">GraphQL</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="architecture">
+        <div class="container">
+            <h2 class="section-title"><i class="fa-solid fa-building-columns neon-icon"></i> System Architecture</h2>
+            <p class="section-subtitle">QANTUM PRIME v35 — 17 modules, 7 pillars, one arsenal</p>
+            <div class="mermaid-container">
+                <div class="mermaid">
+ graph TB
+ CLI[ CLI &amp; MCP<br/>13 Commands] --> NC[ NERVE CENTER<br/>Dashboard :3001]
+ CLI --> QR[ QA RUNNER<br/>Orchestration]
+ CLI --> FT[ FORTRESS<br/>Security]
+ CLI --> PH[ PHYSICS<br/>Performance]
+ QR --> QN[ QA-NTUM<br/>Self-Healing]
+ QR --> QT[ QA TOOL<br/>Automation]
+ QR --> RL[ REALITY<br/>User Journeys]
+ FT --> GD[ GUARDIANS<br/>Health &amp; Alerts]
+ FT --> VR[ VERITAS<br/>Assertions]
+ PH --> BI[ BIOLOGY<br/>Mutation Testing]
+ PH --> IN[ INTELLIGENCE<br/>AI Prediction]
+ NC --> SY[ SYSTEMS<br/>Docker/Process]
+ NC --> MD[ MODULES<br/>Plugin System]
+ NC --> TM[ TERMINAL<br/>Logs &amp; DB]
+ IN --> OM[ OMEGA<br/>Scheduling/CI]
+ QT --> CH[ CHEMISTRY<br/>API/Mock/WS]
+ style NC fill:#0a0a1a,stroke:#00d4ff,color:#00d4ff
+ style FT fill:#0a0a1a,stroke:#ff4757,color:#ff4757
+ style IN fill:#0a0a1a,stroke:#9b59b6,color:#9b59b6
+ style QT fill:#0a0a1a,stroke:#00ff88,color:#00ff88
+ </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">GET IN TOUCH</h2>
+            <div class="contact-content">
+                <p style="color: #94a3b8; margin-bottom: 40px;">
+                    Open to opportunities in senior QA engineering, test automation architecture,
+                    and AI-driven quality assurance. Available for remote work globally.
+                </p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope neon-icon"></i> <a href="mailto:papica777@gmail.com">papica777@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-briefcase neon-icon"></i> <a href="https://github.com/QAntum-Fortres" target="_blank">GitHub: @QAntum-Fortres</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-bolt neon-icon"></i> <a href="https://github.com/QAntum-Fortres/QA-TOOLS" target="_blank">QA-TOOLS Arsenal</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-link neon-icon"></i> <a href="https://qantum-fortres.github.io/PORTFOLIO/" target="_blank">Classic Portfolio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Dimitar Prodromov. All Rights Reserved.</p>
+        <p style="color: #64748b; margin-top: 10px;">
+            Senior QA Engineer | Test Automation Architect | AI Integration Specialist
+        </p>
+        <p style="color: #64748b; margin-top: 5px; font-size: 0.9rem;">
+            QANTUM PRIME v35 · SINGULARITY | 17 Modules | 42K+ LOC | 7 Pillars
+        </p>
+        <div class="social-links">
+            <a href="https://github.com/QAntum-Fortres" class="social-link" target="_blank"><i class="fa-solid fa-laptop-code neon-icon"></i></a>
+            <a href="mailto:papica777@gmail.com" class="social-link"><i class="fa-solid fa-envelope neon-icon"></i></a>
+            <a href="https://github.com/QAntum-Fortres/QA-TOOLS" class="social-link" target="_blank"><i class="fa-solid fa-bolt neon-icon"></i></a>
+        </div>
+        <p style="color: #475569; margin-top: 20px; font-size: 0.8rem;">Press <kbd
+                style="background: #1a1a3a; padding: 2px 8px; border-radius: 4px; border: 1px solid var(--primary);">~</kbd>
+            for Terminal Mode</p>
+    </footer>
+
+    <!-- HIDDEN TERMINAL OVERLAY -->
+    <div id="terminal-overlay" class="terminal-overlay">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+                <span class="terminal-title">QAntum Terminal v35.0 · SINGULARITY</span>
+                <span class="terminal-close" onclick="toggleTerminal()">×</span>
+            </div>
+            <div class="terminal-body" id="terminal-body">
+                <div class="terminal-welcome">
+                    <pre style="color: var(--primary); font-size: 0.7rem;">
+ ██████╗  █████╗ ███╗   ██╗████████╗██╗   ██╗███╗   ███╗
+██╔═══██╗██╔══██╗████╗  ██║╚══██╔══╝██║   ██║████╗ ████║
+██║   ██║███████║██╔██╗ ██║   ██║   ██║   ██║██╔████╔██║
+██║▄▄ ██║██╔══██║██║╚██╗██║   ██║   ██║   ██║██║╚██╔╝██║
+╚██████╔╝██║  ██║██║ ╚████║   ██║   ╚██████╔╝██║ ╚═╝ ██║
+ ╚══▀▀═╝ ╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝    ╚═════╝ ╚═╝     ╚═╝
+                    </pre>
+                    <p>QANTUM PRIME v35 · SINGULARITY. Type <span class="cmd-highlight">help</span> for commands.</p>
+                </div>
+            </div>
+            <div class="terminal-input-line">
+                <span class="terminal-prompt">visitor@qantum:~$</span>
+                <input type="text" id="terminal-input" class="terminal-input" autofocus autocomplete="off"
+                    spellcheck="false">
+            </div>
+        </div>
+    </div>
+
+    <!-- Mermaid.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 
     <script>
         // Initialize Mermaid
@@ -1423,17 +1546,12 @@
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
 
-        // ============================================
-        // TERMINAL SYSTEM
-        // ============================================
+        // Terminal system
         const terminalOverlay = document.getElementById('terminal-overlay');
         const terminalInput = document.getElementById('terminal-input');
         const terminalBody = document.getElementById('terminal-body');
@@ -1445,7 +1563,6 @@
             }
         }
 
-        // Listen for ~ key
         document.addEventListener('keydown', (e) => {
             if (e.key === '`' || e.key === '~') {
                 e.preventDefault();
@@ -1456,55 +1573,89 @@
             }
         });
 
-        // Terminal commands
         const commands = {
             help: () => `
 <span class="output-success">Available Commands:</span>
   <span class="cmd-highlight">help</span>      - Show this help message
+  <span class="cmd-highlight">modules</span>   - List all 17 QANTUM modules
   <span class="cmd-highlight">skills</span>    - List technical skills
-  <span class="cmd-highlight">projects</span>  - Show flagship projects
+  <span class="cmd-highlight">projects</span>  - Show flagship modules
   <span class="cmd-highlight">contact</span>   - Display contact information
-  <span class="cmd-highlight">stats</span>     - Show project statistics
+  <span class="cmd-highlight">stats</span>     - Show arsenal statistics
   <span class="cmd-highlight">whoami</span>    - About the developer
+  <span class="cmd-highlight">pillars</span>   - Show 7 Pillars Architecture
   <span class="cmd-highlight">clear</span>     - Clear terminal
   <span class="cmd-highlight">exit</span>      - Close terminal`,
 
+            modules: () => `
+<span class="output-success"><i class="fa-solid fa-bolt neon-icon"></i> QANTUM PRIME v35 — 17 Modules:</span>
+  [01] <span style="color:#00f5ff;">NERVE CENTER</span>   Express dashboard + WebSocket :3001
+  [02] <span style="color:#9d50bb;">INTELLIGENCE</span>  BugPredictor, ChronosPredictor, AutoFixEngine
+  [03] <span style="color:#ff4757;">FORTRESS</span>      DAST, XSS, SQLi, Headers, CORS, Auth
+  [04] <span style="color:#ffd700;">OMEGA</span>         TestScheduler, PipelineOrchestrator
+  [05] <span style="color:#00f5ff;">PHYSICS</span>       LoadTester, Lighthouse, CoreWebVitals
+  [06] <span style="color:#00ff9d;">BIOLOGY</span>       MutationEngine, SelectorEvolution (SEGC)
+  [07] <span style="color:#9d50bb;">GUARDIANS</span>     HealthCheck, Uptime, AlertManager, SLA
+  [08] <span style="color:#00f5ff;">REALITY</span>       UserJourneySimulator, A/B, FeatureFlags
+  [09] <span style="color:#ff00ff;">CHEMISTRY</span>     REST, GraphQL, WebSocket, MockServer
+  [10] <span style="color:#ffd700;">CLI &amp; MCP</span>     13 commands via Commander.js
+  [11] <span style="color:#00ff9d;">QA TOOL</span>       PageObjects, TestData, Accessibility
+  [12] <span style="color:#00f5ff;">QA-NTUM</span>       SelfHealing, SmartRetry, ParallelExec
+  [13] <span style="color:#9d50bb;">QA RUNNER</span>     SwarmCommander, WatchMode, TagFilter
+  [14] <span style="color:#ffd700;">TERMINAL</span>      LogViewer, DbQuery, EnvInspector
+  [15] <span style="color:#ff00ff;">MODULES</span>       ModuleLoader, PluginAPI, Registry
+  [16] <span style="color:#00ff9d;">SYSTEMS</span>       Docker, PortScanner, ProcessGuard
+  [17] <span style="color:#00f5ff;">VERITAS</span>       Assertions, ContractTest, LivenessToken`,
+
             skills: () => `
-<span class="output-success">🛠️ Technical Skills:</span>
-  <span style="color: #00f5ff;">Languages:</span>   TypeScript, Rust, Python, C#, SQL
-  <span style="color: #ff00ff;">Frameworks:</span>  Playwright, Selenium, Cypress, Robot
-  <span style="color: #00ff9d;">AI/ML:</span>       Vertex AI, DeepSeek, OpenAI, Pinecone
-  <span style="color: #ffd700;">DevOps:</span>      Docker, K8s, GCP, AWS, GitHub Actions
-  <span style="color: #9d50bb;">Special:</span>     Bot Detection Bypass, Zero-Copy Networking`,
+<span class="output-success"><i class="fa-solid fa-screwdriver-wrench neon-icon purple"></i> Technical Skills:</span>
+  <span style="color: #00f5ff;">Languages:</span>   TypeScript 5.3, Node.js 20, SQL, Python, Bash
+  <span style="color: #ff00ff;">Frameworks:</span>  Playwright 1.41, axe-core, AJV, Zod, Commander
+  <span style="color: #00ff9d;">AI/ML:</span>       BugPredictor, ChronosPredictor, AutoFixEngine
+  <span style="color: #ffd700;">DevOps:</span>      Docker, GitHub Actions, GitLab CI, node-cron
+  <span style="color: #9d50bb;">Security:</span>    DAST, XSS, SQLi, CORS, Headers (A-F grading)`,
 
             projects: () => `
-<span class="output-success">🚀 Flagship Projects:</span>
-  [1] <span style="color: #00f5ff;">QAntum Prime</span>     - 14.7M LOC Test Automation Framework
-  [2] <span style="color: #ff00ff;">GhostShield SDK</span>  - Bot Detection Bypass (100% Success)
-  [3] <span style="color: #00ff9d;">VectorMemory</span>     - 52K Semantic Vectors in Pinecone
-  [4] <span style="color: #ffd700;">Chronos-Bolt</span>     - Time-Series Transformer for Testing
-  [5] <span style="color: #9d50bb;">Holodeck</span>         - 3D D3.js Visualization Engine`,
+<span class="output-success"><i class="fa-solid fa-rocket neon-icon purple"></i> Core Modules:</span>
+  [1] <span style="color: #00f5ff;">NERVE CENTER</span>  - Neural dashboard, WebSocket real-time metrics
+  [2] <span style="color: #ff00ff;">FORTRESS</span>      - DAST + XSS + SQLi + security headers
+  [3] <span style="color: #00ff9d;">INTELLIGENCE</span>  - AI bug prediction + 24h ChronosPredictor
+  [4] <span style="color: #ffd700;">QA-NTUM</span>       - Self-healing selectors (genetic algorithms)
+  [5] <span style="color: #9d50bb;">VERITAS</span>       - Contract testing + HMAC liveness tokens`,
 
             contact: () => `
-<span class="output-success">📧 Contact Information:</span>
+<span class="output-success"><i class="fa-solid fa-envelope neon-icon"></i> Contact Information:</span>
   Email:    <span style="color: #00f5ff;">papica777@gmail.com</span>
   GitHub:   <span style="color: #00f5ff;">github.com/QAntum-Fortres</span>
+  Arsenal:  <span style="color: #00f5ff;">github.com/QAntum-Fortres/QA-TOOLS</span>
   Location: <span style="color: #888;">Bulgaria (Remote Available)</span>`,
 
             stats: () => `
-<span class="output-success">📊 Project Statistics:</span>
-  Lines of Code:    <span style="color: #00f5ff;">14,755,102</span>
-  Pinecone Vectors: <span style="color: #ff00ff;">52,573</span>
-  Active Modules:   <span style="color: #00ff9d;">173</span>
-  Departments:      <span style="color: #ffd700;">8</span>
-  Test Coverage:    <span style="color: #9d50bb;">100%</span>`,
+<span class="output-success"><i class="fa-solid fa-chart-bar neon-icon green"></i> Arsenal Statistics:</span>
+  QANTUM Version:  <span style="color: #00f5ff;">v35 · SINGULARITY</span>
+  Total Modules:   <span style="color: #ff00ff;">17</span>
+  Lines of Code:   <span style="color: #00ff9d;">42,857</span>
+  Total Files:     <span style="color: #ffd700;">318</span>
+  Source Repos:    <span style="color: #9d50bb;">11+</span>
+  Health:          <span style="color: #00f5ff;">98%</span>
+  Architecture:    <span style="color: #ff00ff;">7 Pillars</span>`,
+
+            pillars: () => `
+<span class="output-success"><i class="fa-solid fa-building-columns neon-icon"></i> 7 Pillars Architecture:</span>
+  [1] <span style="color: #00f5ff;">Intelligence</span>   AI bug prediction, auto-fix, test prioritization
+  [2] <span style="color: #ff00ff;">Resilience</span>     Self-healing selectors, smart retry, thermal scaling
+  [3] <span style="color: #ff4757;">Security</span>       DAST, XSS/SQLi/auth, security headers analysis
+  [4] <span style="color: #9d50bb;">Observability</span>  Real-time dashboard, WebSocket metrics, health monitoring
+  [5] <span style="color: #ffd700;">Speed</span>          Parallel execution, genetic test ordering, load testing
+  [6] <span style="color: #00ff9d;">Automation</span>     Page object gen, API contract validation, CI/CD gen
+  [7] <span style="color: #00f5ff;">Validation</span>     HMAC liveness tokens, JSON schema, contract testing`,
 
             whoami: () => `
-<span class="output-success">👤 Dimitar Prodromov</span>
+<span class="output-success"><i class="fa-solid fa-user neon-icon"></i> Dimitar Prodromov</span>
   Role:       Senior QA Engineer & Automation Architect
-  Experience: 7+ Years in Test Automation
-  Specialty:  AI-Driven Testing, Bot Detection Bypass
-  Philosophy: "Quality is not an act, it's a habit."`,
+  Arsenal:    QANTUM PRIME v35 · SINGULARITY (17 modules)
+  Specialty:  AI-Driven Testing, Self-Healing Automation
+  Philosophy: "I am what I possess. I can what I have."`,
 
             clear: () => {
                 terminalBody.innerHTML = '';
@@ -1517,19 +1668,16 @@
             }
         };
 
-        // Handle terminal input
         terminalInput.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') {
                 const cmd = terminalInput.value.trim().toLowerCase();
                 terminalInput.value = '';
 
-                // Add command to output
                 const cmdLine = document.createElement('div');
                 cmdLine.className = 'output-line';
                 cmdLine.innerHTML = `<span class="output-cmd">visitor@qantum:~$ ${cmd}</span>`;
                 terminalBody.appendChild(cmdLine);
 
-                // Execute command
                 if (cmd === '') return;
 
                 const result = commands[cmd];
@@ -1548,11 +1696,9 @@
                     terminalBody.appendChild(errorLine);
                 }
 
-                // Scroll to bottom
                 terminalBody.scrollTop = terminalBody.scrollHeight;
             }
         });
     </script>
 </body>
-
 </html>
