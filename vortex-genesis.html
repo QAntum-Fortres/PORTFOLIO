@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VORTEX GENESIS | Deterministic Resilience Architecture</title>
+    <meta name="description"
+        content="VORTEX GENESIS — Deterministic Resilience Architecture. Beyond Testing: A Manifesto for System Resilience.">
+    <meta name="author" content="Dimitar Prodromov">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;700;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #00f5ff;
+            --secondary: #9d50bb;
+            --dark: #020205;
+            --medium: #0a0a12;
+            --light: #1a1a3a;
+            --accent: #ff00ff;
+            --success: #00ff9d;
+            --warning: #ffd700;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(2, 2, 5, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(0, 245, 255, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--primary);
+            opacity: 0.1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(100px, -100px); }
+            50% { transform: translate(200px, 100px); }
+            75% { transform: translate(-100px, 50px); }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            max-width: 900px;
+            padding: 40px;
+        }
+
+        .hero-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.02); opacity: 0.9; }
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        /* Sections */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            background: linear-gradient(to right, #fff, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #64748b;
+            margin-top: -40px;
+            margin-bottom: 40px;
+            font-size: 1rem;
+        }
+
+        /* Architecture Section */
+        .architecture {
+            padding: 100px 20px;
+            background: var(--medium);
+        }
+
+        .arch-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+            background: var(--dark);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            overflow-x: auto;
+        }
+
+        .arch-container svg {
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Dashboard Section */
+        .dashboard {
+            padding: 100px 20px;
+            background: var(--dark);
+        }
+
+        .dashboard-panel {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--light);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            overflow: hidden;
+        }
+
+        .dashboard-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid rgba(0, 245, 255, 0.1);
+        }
+
+        .dashboard-header-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.85rem;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+
+        .dashboard-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            color: var(--success);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--success);
+            animation: blink 2s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .chart-area {
+            padding: 20px;
+            position: relative;
+        }
+
+        .chart-area svg {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .chart-line {
+            stroke-dasharray: 1200;
+            stroke-dashoffset: 1200;
+            animation: drawLine 3s ease forwards 0.5s;
+        }
+
+        @keyframes drawLine {
+            to { stroke-dashoffset: 0; }
+        }
+
+        .metrics-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            border-top: 1px solid rgba(0, 245, 255, 0.1);
+        }
+
+        .metric-card {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            border: 1px solid rgba(0, 245, 255, 0.1);
+        }
+
+        .metric-value {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .metric-value.cyan { color: var(--primary); }
+        .metric-value.green { color: var(--success); }
+        .metric-value.gold { color: var(--warning); }
+
+        .metric-label {
+            color: #64748b;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Terminal Section */
+        .terminal-section {
+            padding: 100px 20px;
+            background: var(--medium);
+        }
+
+        .terminal-window {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #0d1117;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            box-shadow: 0 0 50px rgba(0, 245, 255, 0.1);
+            overflow: hidden;
+        }
+
+        .terminal-header {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            background: #1a1a1a;
+            border-bottom: 1px solid #333;
+        }
+
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .terminal-dot.red { background: #ff5f56; }
+        .terminal-dot.yellow { background: #ffbd2e; }
+        .terminal-dot.green { background: #27ca40; }
+
+        .terminal-title {
+            flex: 1;
+            text-align: center;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .terminal-body {
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            line-height: 1.7;
+            color: #00ff00;
+            min-height: 420px;
+            overflow-x: auto;
+        }
+
+        .terminal-body .cmd { color: var(--primary); }
+        .terminal-body .label { color: var(--warning); }
+        .terminal-body .check { color: var(--success); }
+        .terminal-body .info { color: #94a3b8; }
+        .terminal-body .border-line { color: var(--primary); }
+
+        .term-line {
+            opacity: 0;
+            white-space: pre;
+        }
+
+        .term-line.visible {
+            animation: typeLine 0.05s forwards;
+        }
+
+        @keyframes typeLine {
+            to { opacity: 1; }
+        }
+
+        /* LinkedIn Section */
+        .linkedin {
+            padding: 100px 20px;
+            background: var(--dark);
+        }
+
+        .linkedin-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--light);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 245, 255, 0.1);
+            padding: 40px;
+            position: relative;
+        }
+
+        .linkedin-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .linkedin-text {
+            color: #94a3b8;
+            line-height: 1.8;
+            font-size: 0.95rem;
+            white-space: pre-line;
+        }
+
+        .linkedin-text strong {
+            color: #e2e8f0;
+        }
+
+        .linkedin-text .hashtags {
+            color: var(--primary);
+            margin-top: 20px;
+            display: block;
+        }
+
+        .copy-btn {
+            margin-top: 30px;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            border: 2px solid var(--primary);
+            background: transparent;
+            color: var(--primary);
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .copy-btn:hover {
+            background: var(--primary);
+            color: #000;
+        }
+
+        .copy-btn.copied {
+            border-color: var(--success);
+            color: var(--success);
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 20px;
+            background: var(--dark);
+            text-align: center;
+            border-top: 1px solid rgba(0, 245, 255, 0.1);
+        }
+
+        footer p {
+            color: #94a3b8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            color: var(--primary);
+            font-size: 2rem;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            transform: scale(1.2);
+            filter: drop-shadow(0 0 10px var(--primary));
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(0, 245, 255, 0.3);
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: #000;
+        }
+
+        .cta-buttons {
+            margin-top: 40px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .section-title { font-size: 1.8rem; }
+            .hero-title { font-size: clamp(2rem, 8vw, 3.5rem); }
+            .metrics-row { grid-template-columns: 1fr; }
+            .metric-value { font-size: 1.5rem; }
+            .linkedin-card { padding: 25px; }
+            .terminal-body { font-size: 0.75rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">VORTEX GENESIS</a>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fa-solid fa-arrow-left"></i> Portfolio</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#terminal">Terminal</a></li>
+                <li><a href="#linkedin">LinkedIn Post</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">VORTEX GENESIS</h1>
+            <p class="hero-subtitle">Deterministic Resilience Architecture</p>
+            <p class="hero-description">
+                Beyond Testing: A Manifesto for System Resilience<br>
+                Formal verification, chaos engineering, and self-healing infrastructure —
+                mathematically proven, battle-tested, and production-hardened.
+            </p>
+            <div class="cta-buttons">
+                <a href="#architecture" class="btn btn-primary"><i class="fa-solid fa-diagram-project"></i> View Architecture</a>
+                <a href="#dashboard" class="btn btn-secondary"><i class="fa-solid fa-chart-line"></i> Live Dashboard</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 1: Architecture Diagram -->
+    <section class="architecture" id="architecture">
+        <div class="container">
+            <h2 class="section-title">THE LOGIC</h2>
+            <p class="section-subtitle">VORTEX GENESIS — System Architecture</p>
+            <div class="arch-container">
+                <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="VORTEX GENESIS system architecture diagram showing VORTEX_CORE connected to Aegis_Shield, Neural_Recovery, VeritasGuard, and VortexHealingNexus">
+                    <defs>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="3" result="blur" />
+                            <feMerge>
+                                <feMergeNode in="blur" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+                        <filter id="glow-green">
+                            <feGaussianBlur stdDeviation="2" result="blur" />
+                            <feMerge>
+                                <feMergeNode in="blur" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+                    </defs>
+
+                    <!-- Background grid -->
+                    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,245,255,0.05)" stroke-width="0.5" />
+                    </pattern>
+                    <rect width="800" height="500" fill="#0a0a12" />
+                    <rect width="800" height="500" fill="url(#grid)" />
+
+                    <!-- Connection lines -->
+                    <!-- VORTEX_CORE to Aegis_Shield -->
+                    <line x1="400" y1="250" x2="150" y2="100" stroke="#00f5ff" stroke-width="2" opacity="0.6" filter="url(#glow)" />
+                    <!-- VORTEX_CORE to Neural_Recovery -->
+                    <line x1="400" y1="250" x2="650" y2="100" stroke="#00f5ff" stroke-width="2" opacity="0.6" filter="url(#glow)" />
+                    <!-- VORTEX_CORE to VeritasGuard -->
+                    <line x1="400" y1="250" x2="150" y2="400" stroke="#00ff9d" stroke-width="2" opacity="0.6" filter="url(#glow-green)" />
+                    <!-- VORTEX_CORE to VortexHealingNexus -->
+                    <line x1="400" y1="250" x2="650" y2="400" stroke="#00ff9d" stroke-width="2" opacity="0.6" filter="url(#glow-green)" />
+
+                    <!-- Connection labels -->
+                    <text x="245" y="158" fill="#94a3b8" font-size="10" font-family="Inter, sans-serif" text-anchor="middle">HMAC-SHA256</text>
+                    <text x="555" y="158" fill="#94a3b8" font-size="10" font-family="Inter, sans-serif" text-anchor="middle">Auto-Recovery &lt; 678ms</text>
+                    <text x="245" y="345" fill="#94a3b8" font-size="10" font-family="Inter, sans-serif" text-anchor="middle">Formal Proof Path</text>
+                    <text x="555" y="345" fill="#94a3b8" font-size="10" font-family="Inter, sans-serif" text-anchor="middle">O(1) Access</text>
+
+                    <!-- Central node: VORTEX_CORE -->
+                    <rect x="320" y="215" width="160" height="70" rx="10" fill="none" stroke="#00f5ff" stroke-width="2" filter="url(#glow)" />
+                    <rect x="320" y="215" width="160" height="70" rx="10" fill="rgba(0,245,255,0.08)" />
+                    <text x="400" y="245" fill="#00f5ff" font-size="14" font-weight="bold" font-family="Orbitron, sans-serif" text-anchor="middle">VORTEX_CORE</text>
+                    <text x="400" y="268" fill="#64748b" font-size="10" font-family="Inter, sans-serif" text-anchor="middle">Orchestration Engine</text>
+
+                    <!-- Aegis_Shield -->
+                    <rect x="65" y="65" width="170" height="70" rx="10" fill="none" stroke="#ff00ff" stroke-width="1.5" />
+                    <rect x="65" y="65" width="170" height="70" rx="10" fill="rgba(255,0,255,0.06)" />
+                    <text x="150" y="95" fill="#ff00ff" font-size="13" font-weight="bold" font-family="Orbitron, sans-serif" text-anchor="middle">Aegis_Shield</text>
+                    <text x="150" y="118" fill="#64748b" font-size="10" font-family="Inter, sans-serif" text-anchor="middle">Security Layer</text>
+
+                    <!-- Neural_Recovery -->
+                    <rect x="565" y="65" width="170" height="70" rx="10" fill="none" stroke="#ffd700" stroke-width="1.5" />
+                    <rect x="565" y="65" width="170" height="70" rx="10" fill="rgba(255,215,0,0.06)" />
+                    <text x="650" y="95" fill="#ffd700" font-size="12" font-weight="bold" font-family="Orbitron, sans-serif" text-anchor="middle">Neural_Recovery</text>
+                    <text x="650" y="118" fill="#64748b" font-size="10" font-family="Inter, sans-serif" text-anchor="middle">Chaos Engineering</text>
+
+                    <!-- VeritasGuard -->
+                    <rect x="65" y="365" width="170" height="70" rx="10" fill="none" stroke="#00ff9d" stroke-width="1.5" />
+                    <rect x="65" y="365" width="170" height="70" rx="10" fill="rgba(0,255,157,0.06)" />
+                    <text x="150" y="395" fill="#00ff9d" font-size="13" font-weight="bold" font-family="Orbitron, sans-serif" text-anchor="middle">VeritasGuard</text>
+                    <text x="150" y="418" fill="#64748b" font-size="10" font-family="Inter, sans-serif" text-anchor="middle">Formal Verification</text>
+
+                    <!-- VortexHealingNexus -->
+                    <rect x="555" y="365" width="190" height="70" rx="10" fill="none" stroke="#9d50bb" stroke-width="1.5" />
+                    <rect x="555" y="365" width="190" height="70" rx="10" fill="rgba(157,80,187,0.06)" />
+                    <text x="650" y="392" fill="#9d50bb" font-size="11" font-weight="bold" font-family="Orbitron, sans-serif" text-anchor="middle">VortexHealing</text>
+                    <text x="650" y="408" fill="#9d50bb" font-size="11" font-weight="bold" font-family="Orbitron, sans-serif" text-anchor="middle">Nexus</text>
+                    <text x="650" y="425" fill="#64748b" font-size="10" font-family="Inter, sans-serif" text-anchor="middle">Self-Healing</text>
+
+                    <!-- Title -->
+                    <text x="400" y="30" fill="rgba(0,245,255,0.4)" font-size="11" font-family="Orbitron, sans-serif" text-anchor="middle" letter-spacing="3">VORTEX GENESIS — SYSTEM ARCHITECTURE</text>
+
+                    <!-- Data flow arrows (small triangles on lines) -->
+                    <polygon points="270,170 275,160 280,170" fill="#00f5ff" opacity="0.8" />
+                    <polygon points="520,170 525,160 530,170" fill="#00f5ff" opacity="0.8" />
+                    <polygon points="270,330 275,340 280,330" fill="#00ff9d" opacity="0.8" />
+                    <polygon points="520,330 525,340 530,330" fill="#00ff9d" opacity="0.8" />
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Dashboard -->
+    <section class="dashboard" id="dashboard">
+        <div class="container">
+            <h2 class="section-title">THE REALITY</h2>
+            <p class="section-subtitle">System Resilience Dashboard</p>
+            <div class="dashboard-panel">
+                <div class="dashboard-header">
+                    <span class="dashboard-header-title">SYSTEM RESILIENCE DASHBOARD</span>
+                    <span class="dashboard-status"><span class="status-dot"></span> LIVE</span>
+                </div>
+                <div class="chart-area">
+                    <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="System health chart showing fault injection and auto-healing recovery">
+                        <!-- Background -->
+                        <rect width="800" height="300" fill="#0a0a12" />
+
+                        <!-- Grid lines -->
+                        <line x1="60" y1="40" x2="760" y2="40" stroke="rgba(0,245,255,0.08)" stroke-width="1" />
+                        <line x1="60" y1="90" x2="760" y2="90" stroke="rgba(0,245,255,0.08)" stroke-width="1" />
+                        <line x1="60" y1="140" x2="760" y2="140" stroke="rgba(0,245,255,0.08)" stroke-width="1" />
+                        <line x1="60" y1="190" x2="760" y2="190" stroke="rgba(0,245,255,0.08)" stroke-width="1" />
+                        <line x1="60" y1="240" x2="760" y2="240" stroke="rgba(0,245,255,0.08)" stroke-width="1" />
+
+                        <!-- Y-axis labels -->
+                        <text x="50" y="44" fill="#64748b" font-size="10" font-family="Inter, sans-serif" text-anchor="end">100%</text>
+                        <text x="50" y="94" fill="#64748b" font-size="10" font-family="Inter, sans-serif" text-anchor="end">80%</text>
+                        <text x="50" y="144" fill="#64748b" font-size="10" font-family="Inter, sans-serif" text-anchor="end">60%</text>
+                        <text x="50" y="194" fill="#64748b" font-size="10" font-family="Inter, sans-serif" text-anchor="end">40%</text>
+                        <text x="50" y="244" fill="#64748b" font-size="10" font-family="Inter, sans-serif" text-anchor="end">20%</text>
+
+                        <!-- Y-axis title -->
+                        <text x="15" y="140" fill="#94a3b8" font-size="10" font-family="Inter, sans-serif" text-anchor="middle" transform="rotate(-90, 15, 140)">System Health %</text>
+
+                        <!-- X-axis labels -->
+                        <text x="100" y="268" fill="#64748b" font-size="10" font-family="Inter, sans-serif" text-anchor="middle">T+0s</text>
+                        <text x="250" y="268" fill="#64748b" font-size="10" font-family="Inter, sans-serif" text-anchor="middle">T+10s</text>
+                        <text x="400" y="268" fill="#64748b" font-size="10" font-family="Inter, sans-serif" text-anchor="middle">T+20s</text>
+                        <text x="550" y="268" fill="#64748b" font-size="10" font-family="Inter, sans-serif" text-anchor="middle">T+30s</text>
+                        <text x="700" y="268" fill="#64748b" font-size="10" font-family="Inter, sans-serif" text-anchor="middle">T+40s</text>
+
+                        <!-- X-axis title -->
+                        <text x="400" y="292" fill="#94a3b8" font-size="10" font-family="Inter, sans-serif" text-anchor="middle">Time</text>
+
+                        <!-- Green fill area under the line -->
+                        <path d="M100,42 L200,42 L280,42 L320,42 L360,200 L400,180 L430,60 L480,44 L550,42 L620,42 L700,42 L700,250 L100,250 Z"
+                              fill="rgba(0,255,157,0.05)" />
+
+                        <!-- The health line -->
+                        <polyline class="chart-line"
+                            points="100,42 200,42 280,42 320,42 360,200 400,180 430,60 480,44 550,42 620,42 700,42"
+                            fill="none" stroke="#00ff9d" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />
+
+                        <!-- Fault injection red spike area -->
+                        <rect x="340" y="35" width="80" height="220" fill="rgba(255,0,0,0.06)" rx="4" />
+
+                        <!-- Fault injection annotation -->
+                        <line x1="360" y1="200" x2="360" y2="15" stroke="#ff5f56" stroke-width="1" stroke-dasharray="4,3" opacity="0.7" />
+                        <rect x="310" y="5" width="100" height="18" rx="3" fill="rgba(255,95,86,0.2)" />
+                        <text x="360" y="17" fill="#ff5f56" font-size="9" font-family="Orbitron, sans-serif" text-anchor="middle">FAULT INJECTION</text>
+
+                        <!-- Recovery annotation -->
+                        <line x1="480" y1="44" x2="480" y2="15" stroke="#00ff9d" stroke-width="1" stroke-dasharray="4,3" opacity="0.7" />
+                        <rect x="430" y="5" width="145" height="18" rx="3" fill="rgba(0,255,157,0.15)" />
+                        <text x="503" y="17" fill="#00ff9d" font-size="9" font-family="Orbitron, sans-serif" text-anchor="middle">AUTO-HEALED 234ms</text>
+
+                        <!-- Data point dots -->
+                        <circle cx="360" cy="200" r="4" fill="#ff5f56" />
+                        <circle cx="480" cy="44" r="4" fill="#00ff9d" />
+                        <circle cx="100" cy="42" r="3" fill="#00ff9d" opacity="0.6" />
+                        <circle cx="700" cy="42" r="3" fill="#00ff9d" opacity="0.6" />
+                    </svg>
+                </div>
+                <div class="metrics-row">
+                    <div class="metric-card">
+                        <span class="metric-value cyan">99.99%</span>
+                        <span class="metric-label">System Uptime</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value green">1,200+</span>
+                        <span class="metric-label">Attacks Repelled</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value gold">0.00%</span>
+                        <span class="metric-label">Entropy in Financial Transactions</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Terminal Output -->
+    <section class="terminal-section" id="terminal">
+        <div class="container">
+            <h2 class="section-title">THE TRUTH</h2>
+            <p class="section-subtitle">Formal Verification Output</p>
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span class="terminal-dot red"></span>
+                    <span class="terminal-dot yellow"></span>
+                    <span class="terminal-dot green"></span>
+                    <span class="terminal-title">vortex — formal-verification</span>
+                </div>
+                <div class="terminal-body" id="terminal-body">
+                    <div class="term-line" data-delay="0"><span class="cmd">$ vortex verify --mode=formal --solver=z3</span></div>
+                    <div class="term-line" data-delay="400"></div>
+                    <div class="term-line" data-delay="800"><span class="label">[VORTEX GENESIS]</span> Initializing Formal Verification Engine...</div>
+                    <div class="term-line" data-delay="1200"><span class="label">[Z3 Solver v4.12.4]</span> Loading business logic invariants...</div>
+                    <div class="term-line" data-delay="1600"></div>
+                    <div class="term-line" data-delay="2000">Checking invariant 1/142: transaction_amount &gt; 0 ... <span class="check">✓ VALID</span></div>
+                    <div class="term-line" data-delay="2300">Checking invariant 2/142: user_balance &gt;= withdrawal ... <span class="check">✓ VALID</span></div>
+                    <div class="term-line" data-delay="2600">Checking invariant 3/142: session_token != expired ... <span class="check">✓ VALID</span></div>
+                    <div class="term-line" data-delay="2900"><span class="info">...</span></div>
+                    <div class="term-line" data-delay="3200">Checking invariant 142/142: hmac_signature == valid ... <span class="check">✓ VALID</span></div>
+                    <div class="term-line" data-delay="3600"></div>
+                    <div class="term-line" data-delay="4000"><span class="border-line">═══════════════════════════════════════════════════════</span></div>
+                    <div class="term-line" data-delay="4200">  Z3 Solver: 142 invariants checked</div>
+                    <div class="term-line" data-delay="4400">  Result: <span class="check">SATISFIABLE</span></div>
+                    <div class="term-line" data-delay="4600">  Logic is mathematically sound <span class="check">✓</span></div>
+                    <div class="term-line" data-delay="4800">  <span class="info">Time: 0.847s | Memory: 12.4MB</span></div>
+                    <div class="term-line" data-delay="5000"><span class="border-line">═══════════════════════════════════════════════════════</span></div>
+                    <div class="term-line" data-delay="5400"></div>
+                    <div class="term-line" data-delay="5800"><span class="label">[VeritasGuard]</span> All formal proofs <span class="check">PASSED</span></div>
+                    <div class="term-line" data-delay="6200"><span class="label">[AegisShield]</span> HMAC-SHA256 integrity: <span class="check">VERIFIED</span></div>
+                    <div class="term-line" data-delay="6600"><span class="label">[NeuralRecovery]</span> Auto-heal latency: <span class="check">234ms</span> (target: &lt; 678ms)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: LinkedIn Post -->
+    <section class="linkedin" id="linkedin">
+        <div class="container">
+            <h2 class="section-title">LINKEDIN POST</h2>
+            <p class="section-subtitle">Ready to share — copy and post</p>
+            <div class="linkedin-card">
+                <h3>⚛️ ОТВЪД ТЕСТВАНЕТО: МАНИФЕСТ НА СИСТЕМНАТА УСТОЙЧИВОСТ</h3>
+                <div class="linkedin-text" id="linkedin-text"><strong>🔬 Три стълба на детерминистичната устойчивост:</strong>
+
+<strong>1. Формална верификация (Z3 Solver)</strong>
+Не тестваме — доказваме. 142 бизнес инварианта, математически верифицирани.
+Всяка транзакция, всяка сесия, всеки HMAC подпис — формално доказан.
+
+<strong>2. Хаос инженерство (Neural Recovery)</strong>
+Инжектираме хаос. Измерваме възстановяване.
+Auto-heal latency: 234ms (target: &lt; 678ms)
+1,200+ атаки отблъснати. Entropy: 0.00%
+
+<strong>3. Self-Healing Architecture (VortexHealingNexus)</strong>
+O(1) достъп до всеки healing path.
+Системата не просто издържа — тя се самовъзстановява.
+
+<strong>📊 Метрики:</strong>
+• 99.99% System Uptime
+• 1,200+ Attacks Repelled
+• 0.00% Entropy in Financial Transactions
+• 142 Z3-verified invariants
+• Auto-heal: 234ms
+
+Това не е тестване. Това е системна устойчивост, доказана математически.
+
+<span class="hashtags">#QAAutomation #FormalVerification #ChaosEngineering #SystemResilience #Z3Solver #SelfHealing #QAArchitect #VortexGenesis #BeyondTesting #DeterministicResilience</span></div>
+                <button class="copy-btn" id="copy-btn" type="button">
+                    <i class="fa-solid fa-copy"></i> Copy to Clipboard
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Dimitar Prodromov. All Rights Reserved.</p>
+        <p style="color: #64748b; margin-top: 10px;">
+            VORTEX GENESIS — Deterministic Resilience Architecture
+        </p>
+        <div class="social-links">
+            <a href="https://github.com/QAntum-Fortres" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+            <a href="index.html" class="social-link"><i class="fa-solid fa-arrow-left"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        // Particle background
+        (function initParticles() {
+            var container = document.getElementById('particles');
+            if (!container) return;
+            for (var i = 0; i < 20; i++) {
+                var p = document.createElement('div');
+                p.className = 'particle';
+                var size = Math.random() * 200 + 50;
+                p.style.width = size + 'px';
+                p.style.height = size + 'px';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.top = Math.random() * 100 + '%';
+                p.style.animationDelay = Math.random() * 20 + 's';
+                p.style.animationDuration = (Math.random() * 20 + 15) + 's';
+                container.appendChild(p);
+            }
+        })();
+
+        // Terminal typewriter animation using Intersection Observer
+        (function initTerminal() {
+            var lines = document.querySelectorAll('.term-line');
+            var animated = false;
+
+            function animateLines() {
+                if (animated) return;
+                animated = true;
+                lines.forEach(function(line) {
+                    var delay = parseInt(line.getAttribute('data-delay'), 10) || 0;
+                    setTimeout(function() {
+                        line.classList.add('visible');
+                    }, delay);
+                });
+            }
+
+            if ('IntersectionObserver' in window) {
+                var observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            animateLines();
+                            observer.disconnect();
+                        }
+                    });
+                }, { threshold: 0.2 });
+                var termBody = document.getElementById('terminal-body');
+                if (termBody) observer.observe(termBody);
+            } else {
+                animateLines();
+            }
+        })();
+
+        // Copy to clipboard
+        (function initCopy() {
+            var btn = document.getElementById('copy-btn');
+            var textEl = document.getElementById('linkedin-text');
+            if (!btn || !textEl) return;
+            btn.addEventListener('click', function() {
+                var text = textEl.textContent || textEl.innerText;
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(text).then(function() {
+                        btn.classList.add('copied');
+                        btn.querySelector('i').className = 'fa-solid fa-check';
+                        btn.lastChild.textContent = ' Copied!';
+                        setTimeout(function() {
+                            btn.classList.remove('copied');
+                            btn.querySelector('i').className = 'fa-solid fa-copy';
+                            btn.lastChild.textContent = ' Copy to Clipboard';
+                        }, 2000);
+                    });
+                } else {
+                    // Fallback for older browsers
+                    var range = document.createRange();
+                    range.selectNodeContents(textEl);
+                    var sel = window.getSelection();
+                    sel.removeAllRanges();
+                    sel.addRange(range);
+                    try {
+                        document.execCommand('copy');
+                        btn.classList.add('copied');
+                        btn.querySelector('i').className = 'fa-solid fa-check';
+                        btn.lastChild.textContent = ' Copied!';
+                        setTimeout(function() {
+                            btn.classList.remove('copied');
+                            btn.querySelector('i').className = 'fa-solid fa-copy';
+                            btn.lastChild.textContent = ' Copy to Clipboard';
+                        }, 2000);
+                    } finally {
+                        sel.removeAllRanges();
+                    }
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
