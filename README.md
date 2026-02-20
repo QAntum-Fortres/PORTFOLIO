@@ -36,6 +36,7 @@
 | 🧠 **DeepSeek R1 Swarm** | AI agent swarm for autonomous test generation | AI Agents |
 | 📊 **VectorMemory** | TF-IDF semantic search with 52,573 vectors indexed | Pinecone, Embeddings |
 | 🌐 **Holodeck** | 3D D3.js visualization with 236 nodes, 87 edges | D3.js, WebGL |
+| ⚛️ **Vortex Genesis** | Deterministic Resilience — Chaos Engineering, Z3 Formal Verification, HMAC-SHA256 | Rust, Z3 Solver |
 
 ---
 
@@ -60,7 +61,7 @@
 | **Pinecone Vectors** | 52,573 |
 | **Modules** | 173 |
 | **Departments** | 8 |
-| **Dashboard Files** | 2 (Veritas + Hybrid) |
+| **Dashboard Files** | 3 (Veritas + Hybrid + Vortex Genesis) |
 
 ---
 
@@ -68,6 +69,7 @@
 
 - `index.html` - Main portfolio landing page (650+ lines)
 - `veritas-dashboard.html` - Neural Interface Command Center
+- `vortex-genesis.html` - Deterministic Resilience Architecture Showcase
 - `pricing-recommendations.md` - Salary & pricing guide
 
 ---
